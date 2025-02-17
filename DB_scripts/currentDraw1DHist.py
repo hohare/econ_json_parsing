@@ -5,10 +5,10 @@ import argparse
 import os
 parser = argparse.ArgumentParser()
 parser.add_argument("--dbaddress", help="db address from local tunnel", default = 27017)
-parser.add_argument("--odir", help="output directory", default = './plots')
+parser.add_argument("--odir", help="output directory", default = './')
 args = parser.parse_args()
 
-odir = args.odir + '/currentDraw1D'
+odir = args.odir + '/test_power'
 if not os.path.isdir(odir):
     os.makedirs(odir)
 
@@ -21,7 +21,8 @@ def plot_currentDraw(array_v, array_c, ECON_type, odir,tray_number = 'all'):
     underflow_current = np.sum(array_c < 0.2)
     overflow_current = np.sum(array_c > 0.37)
     legend_text_current = f'Underflow: {underflow_current}, Overflow: {overflow_current}'
-
+    if tray_number != 'all':
+        odir = odir + '/perTray'
     #hist[0].axvline(x=0.24, color='black', alpha=0.5, label="Threshold = 0.24", linestyle='--')
     #hist[0].axvline(x=0.28, color='r', alpha=0.5, label="Max current = 0.28", linestyle='--')
     hist[0].grid(color='black', linestyle='--', linewidth=.05)
@@ -60,43 +61,10 @@ mongo_d = Database(args.dbaddress, client = 'econdDB')
 mongo_t = Database(args.dbaddress, client = 'econtDB')
 
 
-current, voltage = mongo_d.getVoltageAndCurrent()
+current, voltage, current_during_hardreset, current_after_hardreset, current_during_softreset, current_after_softreset, current_runbit_set = mongo_d.getVoltageAndCurrent()
 plot_currentDraw(voltage, current, ECON_type = 'ECON-D', odir=odir)
 
-# 14
-current, voltage = mongo_d.getVoltageAndCurrent(lowerLim=1400, upperLim = 1500)
-plot_currentDraw(voltage, current, ECON_type = 'ECON-D', odir=odir, tray_number = '14')
-
-# 15
-current, voltage = mongo_d.getVoltageAndCurrent(lowerLim=1500, upperLim = 1600)
-plot_currentDraw(voltage, current, ECON_type = 'ECON-D', odir=odir, tray_number = '15')
-
-# 16
-current, voltage = mongo_d.getVoltageAndCurrent(lowerLim=1600, upperLim = 1700)
-plot_currentDraw(voltage, current, ECON_type = 'ECON-D', odir=odir, tray_number = '16')
-
-# 17
-current, voltage = mongo_d.getVoltageAndCurrent(lowerLim=1700, upperLim = 1800)
-plot_currentDraw(voltage, current, ECON_type = 'ECON-D', odir=odir, tray_number = '17')
-
-# 18
-current, voltage = mongo_d.getVoltageAndCurrent(lowerLim=1800, upperLim = 1900)
-plot_currentDraw(voltage, current, ECON_type = 'ECON-D', odir=odir, tray_number = '18')
-
-# 19
-current, voltage = mongo_d.getVoltageAndCurrent(lowerLim=1900, upperLim = 2000)
-plot_currentDraw(voltage, current, ECON_type = 'ECON-D', odir=odir, tray_number = '19')
-
-# 20
-current, voltage = mongo_d.getVoltageAndCurrent(lowerLim=2000, upperLim = 2100)
-plot_currentDraw(voltage, current, ECON_type = 'ECON-D', odir=odir, tray_number = '20')
-
-# 21
-current, voltage = mongo_d.getVoltageAndCurrent(lowerLim=2100, upperLim = 2200)
-plot_currentDraw(voltage, current, ECON_type = 'ECON-D', odir=odir, tray_number = '21')
-
-
-current, voltage = mongo_t.getVoltageAndCurrent(econType = 'ECONT')
+current, voltage, current_during_hardreset, current_after_hardreset, current_during_softreset, current_after_softreset, current_runbit_set = mongo_t.getVoltageAndCurrent(econType = 'ECONT')
 plot_currentDraw(voltage, current, ECON_type = 'ECON-T', odir=odir)
 
 
