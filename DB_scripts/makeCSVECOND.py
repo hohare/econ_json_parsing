@@ -5,6 +5,9 @@ import argparse
 import os
 import pandas as pd
 from collections import defaultdict
+import datetime
+
+timestampStr = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 parser = argparse.ArgumentParser()
 parser.add_argument("--dbaddress", help="db address from local tunnel", default = 27017)
 parser.add_argument("--odir", help="output directory", default = './CSV')
@@ -262,6 +265,6 @@ for i, chipNum in enumerate(chipNumFF):
 df = pd.DataFrame.from_dict(chip_results, orient='index')
 
 # Save the DataFrame to a CSV file
-df.to_csv(f'{odir}/chip_test_results.csv')
+df.to_csv(f'{odir}/econd_chip_test_results_{timestampStr}.csv')
 
 print('Done!')
