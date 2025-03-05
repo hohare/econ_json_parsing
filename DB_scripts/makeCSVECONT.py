@@ -22,9 +22,16 @@ db = Database(args.dbaddress, client = 'econtDB')
 chip_results = defaultdict(lambda: defaultdict(float))
 
 keysForPassFail = [
+     'test_pllautolock_1_08',
+     'test_pll_capbank_width_1_08',
      'test_pll_lock_1_08',
+     'test_pllautolock_1_32',
+     'test_pll_capbank_width_1_32',
      'test_pll_lock_1_32',
+     'test_pllautolock_1_2',
+     'test_pll_capbank_width_1_2',
      'test_pll_lock_1_2',
+     'test_currentdraw_1p2V',
      'test_fc_lock',
      'test_rw_allregisters_0',
      'test_rw_allregisters_255',
@@ -51,8 +58,14 @@ keysForPassFail = [
      'test_hold_hard_reset',
      'test_hold_soft_reset',
      'test_chip_sync',
+     'test_ePortRXPRBS_1_08',
+     'test_eTX_delayscan_1_08',
      'test_eTx_PRBS7_1_08',
+     'test_ePortRXPRBS_1_32',
+     'test_eTX_delayscan_1_32',
      'test_eTx_PRBS7_1_32',
+     'test_ePortRXPRBS_1_2',
+     'test_eTX_delayscan_1_2',
      'test_eTx_PRBS7_1_2',
      'test_alignment_erx',
      'test_alignment_etx',
@@ -91,7 +104,6 @@ keysForPassFail = [
      'test_algorithm_compression_bypass___econt_testvectors_mcDataset_AE',
      'test_fill_buffer',
      'test_check_error_counts'
-
 ]
 
 def stringReplace(word):
@@ -135,6 +147,16 @@ for i, chipNum in enumerate(chipNums):
     # arr = np.array(list(outcomes[i].values()))
     # if (np.isin(-1, arr) == True):
     #     continue
+    
+    sum = 0
+    for key in keysForPassFail:
+        chip_results[chipNum][key] = outcomes[i][key]
+        sum+= outcomes[i][key]
+    if sum < 82:
+        chip_results[chipNum]['Pass/Fail'] = 'Fail'
+    else:
+        chip_results[chipNum]['Pass/Fail'] = 'Pass'
+        
     for key in keysForPassFail:
         chip_results[chipNum][key] = outcomes[i][key]
     chip_results[chipNum]['Timestamp'] = updatedTimestamp[i]

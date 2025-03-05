@@ -20,50 +20,85 @@ if not os.path.isdir(odir):
 db = Database(args.dbaddress, client = 'econdDB')
 chip_results = defaultdict(lambda: defaultdict(float))
 ##TO DO: if there are multiple assert statements remove from the list and query the metadata from the table 
-keysForPassFail = [
-    'test_common_mode_erx_route',
-    'test_errBit_roc_errin_1',
-    'test_errBit_roc_errin_0',
-    'test_fc_lock',
-    'test_rw_allregisters_0',
-    'test_rw_allregisters_255',
-    'test_hard_reset_i2c_allregisters',
-    'test_hold_hard_reset',
-    'test_soft_reset_i2c_allregisters',
-    'test_hold_soft_reset',
-    'test_wrong_reg_address',
-    'test_wrong_i2c_address',
-    'test_alladdresses_0',
-    'test_alladdresses_1',
-    'test_alladdresses_2',
-    'test_alladdresses_3',
-    'test_alladdresses_4',
-    'test_alladdresses_5',
-    'test_alladdresses_6',
-    'test_alladdresses_7',
-    'test_alladdresses_8',
-    'test_alladdresses_9',
-    'test_alladdresses_10',
-    'test_alladdresses_11',
-    'test_alladdresses_12',
-    'test_alladdresses_13',
-    'test_alladdresses_14',
-    'test_alladdresses_15',
-    'test_chip_sync',
-    'test_input_aligner_shift_shift0',
-    'test_alignment_erx',
-    'test_alignment_etx',
-    'test_pll_lock_1_08',
-    'test_pll_lock_1_32',
-    'test_pll_lock_1_2',
-    'test_reset_requests_setup',
-    'test_reset_requests_watchdogs',
-    'test_reset_requests_alert_limits',
-    'test_reset_requests_bits',
-    'test_clearing_fc',
-    'test_serializer',
-    
-]
+keysForPassFail = ['test_read_current_start',
+ 'test_pllautolock_1_08',
+ 'test_pll_capbank_width_1_08',
+ 'test_pll_lock_1_08',
+ 'test_pllautolock_1_32',
+ 'test_pll_capbank_width_1_32',
+ 'test_pll_lock_1_32',
+ 'test_pllautolock_1_2',
+ 'test_pll_capbank_width_1_2',
+ 'test_pll_lock_1_2',
+ 'test_currentdraw_1p2V',
+ 'test_fc_lock',
+ 'test_rw_allregisters_0',
+ 'test_rw_allregisters_255',
+ 'test_hard_reset_i2c_allregisters',
+ 'test_soft_reset_i2c_allregisters',
+ 'test_wrong_reg_address',
+ 'test_alladdresses_0',
+ 'test_alladdresses_1',
+ 'test_alladdresses_2',
+ 'test_alladdresses_3',
+ 'test_alladdresses_4',
+ 'test_alladdresses_5',
+ 'test_alladdresses_6',
+ 'test_alladdresses_7',
+ 'test_alladdresses_8',
+ 'test_alladdresses_9',
+ 'test_alladdresses_10',
+ 'test_alladdresses_11',
+ 'test_alladdresses_12',
+ 'test_alladdresses_13',
+ 'test_alladdresses_14',
+ 'test_alladdresses_15',
+ 'test_wrong_i2c_address',
+ 'test_hold_hard_reset',
+ 'test_hold_soft_reset',
+ 'test_chip_sync',
+ 'test_ePortRXPRBS_1_08',
+ 'test_eTX_delayscan_1_08',
+ 'test_eTx_PRBS7_1_08',
+ 'test_ePortRXPRBS_1_32',
+ 'test_eTX_delayscan_1_32',
+ 'test_eTx_PRBS7_1_32',
+ 'test_ePortRXPRBS_1_2',
+ 'test_eTX_delayscan_1_2',
+ 'test_eTx_PRBS7_1_2',
+ 'test_alignment_erx',
+ 'test_alignment_etx',
+ 'test_common_mode_erx_route',
+ 'test_errBit_roc_errin_1',
+ 'test_errBit_roc_errin_0',
+ 'test_input_aligner_shift_shift0',
+ 'test_reset_requests_setup',
+ 'test_reset_requests_watchdogs',
+ 'test_reset_requests_alert_limits',
+ 'test_reset_requests_bits',
+ 'test_clearing_fc',
+ 'test_serializer',
+ 'test_zs_zsm1_pass_mask',
+ 'test_zs_zsm1_sampling',
+ 'test_single_fcsequence_counter_100-None-fc_sequence0-eTx-0',
+ 'test_single_fcsequence_counter_100-None-fc_sequence1-eTx-01',
+ 'test_single_fcsequence_counter_100-None-fc_sequence2-eTx-012',
+ 'test_single_fcsequence_counter_100-None-fc_sequence3-eTx-0123',
+ 'test_single_fcsequence_counter_100-None-fc_sequence4-eTx-01234',
+ 'test_single_fcsequence_counter_100-None-fc_sequence5-eTx-012345',
+ 'test_single_fcsequence_None-__econd_testvectors_exampleData_testVectorInputs_Random_csv-fc_sequence6-ZS_c_i_1',
+ 'test_single_fcsequence_None-__econd_testvectors_exampleData_testVectorInputs_Random_csv-fc_sequence7-ZS_37',
+ 'test_single_fcsequence_None-__econd_testvectors_exampleData_testVectorInputs_Random_csv-fc_sequence8-ZS_37',
+ 'test_single_fcsequence_None-__econd_testvectors_exampleData_testVectorInputs_Random_csv-fc_sequence9-ZS_37',
+ 'test_single_fcsequence_None-__econd_testvectors_exampleData_testVectorInputs_Random_csv-fc_sequence10-pass_thru',
+ 'test_check_error_counts',
+ 'test_bist',
+ 'test_bist_full',
+ 'test_streamCompareLoop_0_99',
+ 'test_streamCompareLoop_1_03',
+ 'test_streamCompareLoop_1_08']
+
+
 def stringReplace(word):
     if "[" in word:
         word = word.replace("[","_")
@@ -122,8 +157,17 @@ for i, chipNum in enumerate(chipNums):
     # arr = np.array(list(outcomes[i].values()))
     # if (np.isin(-1, arr) == True):
     #     continue
+    sum = 0
     for key in keysForPassFail:
-        chip_results[chipNum][key] = outcomes[i][key]
+        try:
+            chip_results[chipNum][key] = outcomes[i][key]
+            sum += outcomes[i][key]
+        except:
+            chip_results[chipNum][key] = None
+    if (sum == 73 | sum == 77):
+        chip_results[chipNum]['Pass/Fail'] = 'Pass'
+    else:
+        chip_results[chipNum]['Pass/Fail'] = 'Fail'
     chip_results[chipNum]['Timestamp'] = updatedTimestamp[i]
     chip_results[chipNum]['Socket'] = socket[i]
     chip_results[chipNum]['Tray'] = str(chipNum)[:2]
