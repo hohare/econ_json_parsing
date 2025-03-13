@@ -154,20 +154,18 @@ print('writing data to csv')
 ## write results to a dictionary
 ## Add in pass/fail results and the timestamp
 for i, chipNum in enumerate(chipNums):
-    # arr = np.array(list(outcomes[i].values()))
-    # if (np.isin(-1, arr) == True):
-    #     continue
-    sum = 0
+    # Initialize 'Pass/Fail' if not already present
+    if 'Pass/Fail' not in chip_results[chipNum]:
+        chip_results[chipNum]['Pass/Fail'] = 'Pass'
+
+    # Loop through keys in keysForPassFail
     for key in keysForPassFail:
         try:
             chip_results[chipNum][key] = outcomes[i][key]
-            sum += outcomes[i][key]
-        except:
+            if outcomes[i][key] != 1:
+                chip_results[chipNum]['Pass/Fail'] = 'Fail'
+        except KeyError:
             chip_results[chipNum][key] = None
-    if (sum == 73 | sum == 77):
-        chip_results[chipNum]['Pass/Fail'] = 'Pass'
-    else:
-        chip_results[chipNum]['Pass/Fail'] = 'Fail'
     chip_results[chipNum]['Timestamp'] = updatedTimestamp[i]
     chip_results[chipNum]['Socket'] = socket[i]
     chip_results[chipNum]['Tray'] = str(chipNum)[:2]
