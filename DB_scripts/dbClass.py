@@ -550,6 +550,114 @@ class Database:
             ])
 
         return result_dict
+    def retrieveTestAlgorithmInfo(self, lowerLim=None, upperLim=None, perDay=None, econType = 'ECONT'):
+        voltage_field_map = {
+            'None': {
+                        'test_algorithm_compression_emu___econt_testvectors_counterPatternInTC_RPT_-errcnt': 'test_algorithm_compression_emu___econt_testvectors_counterPatternInTC_RPT_.metadata.sc_err_count',
+                        'test_algorithm_compression_emu___econt_testvectors_counterPatternInTC_RPT_-wordcnt': 'test_algorithm_compression_emu___econt_testvectors_counterPatternInTC_RPT_.metadata.sc_word_count',
+                        'test_algorithm_compression_emu___econt_testvectors_randomPatternExpInTC_TS_Thr100_-errcnt': 'test_algorithm_compression_emu___econt_testvectors_randomPatternExpInTC_TS_Thr100_.metadata.sc_err_count',
+                        'test_algorithm_compression_emu___econt_testvectors_randomPatternExpInTC_TS_Thr100_-wordcnt': 'test_algorithm_compression_emu___econt_testvectors_randomPatternExpInTC_TS_Thr100_.metadata.sc_word_count',
+                        'test_algorithm_compression_emu___econt_testvectors_counterPatternInTC_TS_Thr47_13eTx_-errcnt': 'test_algorithm_compression_emu___econt_testvectors_counterPatternInTC_TS_Thr47_13eTx_.metadata.sc_err_count',
+                        'test_algorithm_compression_emu___econt_testvectors_counterPatternInTC_TS_Thr47_13eTx_-wordcnt': 'test_algorithm_compression_emu___econt_testvectors_counterPatternInTC_TS_Thr47_13eTx_.metadata.sc_word_count',
+                        'test_algorithm_compression_emu___econt_testvectors_mcDataset_STC_type0_eTx5_-errcnt': 'test_algorithm_compression_emu___econt_testvectors_mcDataset_STC_type0_eTx5_.metadata.sc_err_count',
+                        'test_algorithm_compression_emu___econt_testvectors_mcDataset_STC_type0_eTx5_-wordcnt': 'test_algorithm_compression_emu___econt_testvectors_mcDataset_STC_type0_eTx5_.metadata.sc_word_count',
+                        'test_algorithm_compression_emu___econt_testvectors_mcDataset_STC_type0_eTx4_-errcnt': 'test_algorithm_compression_emu___econt_testvectors_mcDataset_STC_type0_eTx4_.metadata.sc_err_count',
+                        'test_algorithm_compression_emu___econt_testvectors_mcDataset_STC_type0_eTx4_-wordcnt': 'test_algorithm_compression_emu___econt_testvectors_mcDataset_STC_type0_eTx4_.metadata.sc_word_count',
+                        'test_algorithm_compression_emu___econt_testvectors_mcDataset_STC_type0_eTx3_-errcnt': 'test_algorithm_compression_emu___econt_testvectors_mcDataset_STC_type0_eTx3_.metadata.sc_err_count',
+                        'test_algorithm_compression_emu___econt_testvectors_mcDataset_STC_type0_eTx3_-wordcnt': 'test_algorithm_compression_emu___econt_testvectors_mcDataset_STC_type0_eTx3_.metadata.sc_word_count',
+                        'test_algorithm_compression_emu___econt_testvectors_mcDataset_STC_type0_eTx2_-errcnt': 'test_algorithm_compression_emu___econt_testvectors_mcDataset_STC_type0_eTx2_.metadata.sc_err_count',
+                        'test_algorithm_compression_emu___econt_testvectors_mcDataset_STC_type0_eTx2_-wordcnt': 'test_algorithm_compression_emu___econt_testvectors_mcDataset_STC_type0_eTx2_.metadata.sc_word_count',
+                        'test_algorithm_compression_emu___econt_testvectors_mcDataset_STC_type0_eTx1_-errcnt': 'test_algorithm_compression_emu___econt_testvectors_mcDataset_STC_type0_eTx1_.metadata.sc_err_count',
+                        'test_algorithm_compression_emu___econt_testvectors_mcDataset_STC_type0_eTx1_-wordcnt': 'test_algorithm_compression_emu___econt_testvectors_mcDataset_STC_type0_eTx1_.metadata.sc_word_count',
+                        'test_algorithm_compression_emu___econt_testvectors_mcDataset_STC_type1_eTx2_-errcnt': 'test_algorithm_compression_emu___econt_testvectors_mcDataset_STC_type1_eTx2_.metadata.sc_err_count',
+                        'test_algorithm_compression_emu___econt_testvectors_mcDataset_STC_type1_eTx2_-wordcnt': 'test_algorithm_compression_emu___econt_testvectors_mcDataset_STC_type1_eTx2_.metadata.sc_word_count',
+                        'test_algorithm_compression_emu___econt_testvectors_mcDataset_STC_type1_eTx1_-errcnt': 'test_algorithm_compression_emu___econt_testvectors_mcDataset_STC_type1_eTx1_.metadata.sc_err_count',
+                        'test_algorithm_compression_emu___econt_testvectors_mcDataset_STC_type1_eTx1_-wordcnt': 'test_algorithm_compression_emu___econt_testvectors_mcDataset_STC_type1_eTx1_.metadata.sc_word_count',
+                        'test_algorithm_compression_emu___econt_testvectors_mcDataset_STC_type2_eTx3_-errcnt': 'test_algorithm_compression_emu___econt_testvectors_mcDataset_STC_type2_eTx3_.metadata.sc_err_count',
+                        'test_algorithm_compression_emu___econt_testvectors_mcDataset_STC_type2_eTx3_-wordcnt': 'test_algorithm_compression_emu___econt_testvectors_mcDataset_STC_type2_eTx3_.metadata.sc_word_count',
+                        'test_algorithm_compression_emu___econt_testvectors_mcDataset_STC_type2_eTx2_-errcnt': 'test_algorithm_compression_emu___econt_testvectors_mcDataset_STC_type2_eTx2_.metadata.sc_err_count',
+                        'test_algorithm_compression_emu___econt_testvectors_mcDataset_STC_type2_eTx2_-wordcnt': 'test_algorithm_compression_emu___econt_testvectors_mcDataset_STC_type2_eTx2_.metadata.sc_word_count',
+                        'test_algorithm_compression_emu___econt_testvectors_mcDataset_STC_type2_eTx1_-errcnt': 'test_algorithm_compression_emu___econt_testvectors_mcDataset_STC_type2_eTx1_.metadata.sc_err_count',
+                        'test_algorithm_compression_emu___econt_testvectors_mcDataset_STC_type2_eTx1_-wordcnt': 'test_algorithm_compression_emu___econt_testvectors_mcDataset_STC_type2_eTx1_.metadata.sc_word_count',
+                        'test_algorithm_compression_emu___econt_testvectors_mcDataset_STC_type3_eTx1_-errcnt': 'test_algorithm_compression_emu___econt_testvectors_mcDataset_STC_type3_eTx1_.metadata.sc_err_count',
+                        'test_algorithm_compression_emu___econt_testvectors_mcDataset_STC_type3_eTx1_-wordcnt': 'test_algorithm_compression_emu___econt_testvectors_mcDataset_STC_type3_eTx1_.metadata.sc_word_count',
+                        'test_algorithm_compression_emu___econt_testvectors_mcDataset_STC_type3_eTx2_-errcnt': 'test_algorithm_compression_emu___econt_testvectors_mcDataset_STC_type3_eTx2_.metadata.sc_err_count',
+                        'test_algorithm_compression_emu___econt_testvectors_mcDataset_STC_type3_eTx2_-wordcnt': 'test_algorithm_compression_emu___econt_testvectors_mcDataset_STC_type3_eTx2_.metadata.sc_word_count',
+                        'test_algorithm_compression_emu___econt_testvectors_mcDataset_STC_type3_eTx3_-errcnt': 'test_algorithm_compression_emu___econt_testvectors_mcDataset_STC_type3_eTx3_.metadata.sc_err_count',
+                        'test_algorithm_compression_emu___econt_testvectors_mcDataset_STC_type3_eTx3_-wordcnt': 'test_algorithm_compression_emu___econt_testvectors_mcDataset_STC_type3_eTx3_.metadata.sc_word_count',
+                        'test_algorithm_compression_emu___econt_testvectors_mcDataset_STC_type3_eTx4_-errcnt': 'test_algorithm_compression_emu___econt_testvectors_mcDataset_STC_type3_eTx4_.metadata.sc_err_count',
+                        'test_algorithm_compression_emu___econt_testvectors_mcDataset_STC_type3_eTx4_-wordcnt': 'test_algorithm_compression_emu___econt_testvectors_mcDataset_STC_type3_eTx4_.metadata.sc_word_count',
+                        'test_algorithm_compression_emu___econt_testvectors_mcDataset_STC_type4_eTx1_-errcnt': 'test_algorithm_compression_emu___econt_testvectors_mcDataset_STC_type4_eTx1_.metadata.sc_err_count',
+                        'test_algorithm_compression_emu___econt_testvectors_mcDataset_STC_type4_eTx1_-wordcnt': 'test_algorithm_compression_emu___econt_testvectors_mcDataset_STC_type4_eTx1_.metadata.sc_word_count',
+                        'test_algorithm_compression_emu___econt_testvectors_mcDataset_STC_type4_eTx2_-errcnt': 'test_algorithm_compression_emu___econt_testvectors_mcDataset_STC_type4_eTx2_.metadata.sc_err_count',
+                        'test_algorithm_compression_emu___econt_testvectors_mcDataset_STC_type4_eTx2_-wordcnt': 'test_algorithm_compression_emu___econt_testvectors_mcDataset_STC_type4_eTx2_.metadata.sc_word_count',
+                        'test_algorithm_compression_emu___econt_testvectors_mcDataset_STC_type4_eTx3_-errcnt': 'test_algorithm_compression_emu___econt_testvectors_mcDataset_STC_type4_eTx3_.metadata.sc_err_count',
+                        'test_algorithm_compression_emu___econt_testvectors_mcDataset_STC_type4_eTx3_-wordcnt': 'test_algorithm_compression_emu___econt_testvectors_mcDataset_STC_type4_eTx3_.metadata.sc_word_count',
+                        'test_algorithm_compression_emu___econt_testvectors_mcDataset_STC_type4_eTx4_-errcnt': 'test_algorithm_compression_emu___econt_testvectors_mcDataset_STC_type4_eTx4_.metadata.sc_err_count',
+                        'test_algorithm_compression_emu___econt_testvectors_mcDataset_STC_type4_eTx4_-wordcnt': 'test_algorithm_compression_emu___econt_testvectors_mcDataset_STC_type4_eTx4_.metadata.sc_word_count',
+                        'test_algorithm_compression_bypass___econt_testvectors_counterPatternInTC_RPT_-errcnt': 'test_algorithm_compression_bypass___econt_testvectors_counterPatternInTC_RPT_.metadata.sc_err_count',
+                        'test_algorithm_compression_bypass___econt_testvectors_counterPatternInTC_RPT_-wordcnt': 'test_algorithm_compression_bypass___econt_testvectors_counterPatternInTC_RPT_.metadata.sc_word_count',
+                        'test_algorithm_compression_bypass___econt_testvectors_mcDataset_RPT_13eTx_-errcnt': 'test_algorithm_compression_bypass___econt_testvectors_mcDataset_RPT_13eTx_.metadata.sc_err_count',
+                        'test_algorithm_compression_bypass___econt_testvectors_mcDataset_RPT_13eTx_-wordcnt': 'test_algorithm_compression_bypass___econt_testvectors_mcDataset_RPT_13eTx_.metadata.sc_word_count',
+                        'test_algorithm_compression_bypass___econt_testvectors_counterPatternInTC_by2_BC_10eTx_-errcnt': 'test_algorithm_compression_bypass___econt_testvectors_counterPatternInTC_by2_BC_10eTx_.metadata.sc_err_count',
+                        'test_algorithm_compression_bypass___econt_testvectors_counterPatternInTC_by2_BC_10eTx_-wordcnt': 'test_algorithm_compression_bypass___econt_testvectors_counterPatternInTC_by2_BC_10eTx_.metadata.sc_word_count',
+                        'test_algorithm_compression_bypass___econt_testvectors_counterPatternInTC_by2_BC_5eTx_-errcnt': 'test_algorithm_compression_bypass___econt_testvectors_counterPatternInTC_by2_BC_5eTx_.metadata.sc_err_count',
+                        'test_algorithm_compression_bypass___econt_testvectors_counterPatternInTC_by2_BC_5eTx_-wordcnt': 'test_algorithm_compression_bypass___econt_testvectors_counterPatternInTC_by2_BC_5eTx_.metadata.sc_word_count',
+                        'test_algorithm_compression_bypass___econt_testvectors_counterPatternInTC_by2_BC_1eTx_-errcnt': 'test_algorithm_compression_bypass___econt_testvectors_counterPatternInTC_by2_BC_1eTx_.metadata.sc_err_count',
+                        'test_algorithm_compression_bypass___econt_testvectors_counterPatternInTC_by2_BC_1eTx_-wordcnt': 'test_algorithm_compression_bypass___econt_testvectors_counterPatternInTC_by2_BC_1eTx_.metadata.sc_word_count',
+                        'test_algorithm_compression_bypass___econt_testvectors_counterPatternInTC_by2_TS_Thr47_13eTx_-errcnt': 'test_algorithm_compression_bypass___econt_testvectors_counterPatternInTC_by2_TS_Thr47_13eTx_.metadata.sc_err_count',
+                        'test_algorithm_compression_bypass___econt_testvectors_counterPatternInTC_by2_TS_Thr47_13eTx_-wordcnt': 'test_algorithm_compression_bypass___econt_testvectors_counterPatternInTC_by2_TS_Thr47_13eTx_.metadata.sc_word_count',
+                        'test_algorithm_compression_bypass___econt_testvectors_mcDataset_AE-errcnt': 'test_algorithm_compression_bypass___econt_testvectors_mcDataset_AE.metadata.sc_err_count',
+                        'test_algorithm_compression_bypass___econt_testvectors_mcDataset_AE-wordcnt': 'test_algorithm_compression_bypass___econt_testvectors_mcDataset_AE.metadata.sc_word_count',
+                        'test_fill_buffer-errcnt': 'test_fill_buffer.metadata.sc_err_count',
+                        'test_fill_buffer-wordcnt': 'test_fill_buffer.metadata.sc_word_count',
+                        'chipNum':"chip_number"
+            },
+        }
+        query_map = voltage_field_map['None']
+        pipeline = constructQueryPipeline(query_map, econType=econType, lowerLim=lowerLim, upperLim=upperLim, perDay=perDay)
+        cursor = self.db['testPacketsInfo'].aggregate(pipeline)
+        documents = list(cursor)
+        # Initialize a dictionary to hold results dynamically
+        result_dict = {}
+        # Loop over each field in the query_map
+        for field_key, field_value in query_map.items():
+            # Extract the relevant field from the documents (handling None and missing keys)
+            result_dict[field_key] = np.array([
+                doc['latest_data'].get(field_key, None) if doc.get('latest_data') else None
+                for doc in documents
+            ])
+
+        return result_dict
+        
+    def retrieveTestMuxInfo(self, lowerLim=None, upperLim=None, perDay=None, econType = 'ECONT'):
+        voltage_field_map = {
+            'None': {
+                'test_mux-errcnt': 'test_mux.metadata.error_counts',
+                'test_mux-wordcnt': 'test_mux.metadata.word_counts',
+                'test_float_to_fix-errcnt': 'test_float_to_fix.metadata.error_counts',
+                'test_float_to_fix-wordcnt': 'test_float_to_fix.metadata.word_counts',
+                'test_calibrations-errcnt': 'test_calibrations.metadata.error_counts',
+                'test_calibrations-wordcnt': 'test_calibrations.metadata.word_counts', 
+                'chipNum':"chip_number"
+            },
+        }
+        query_map = voltage_field_map['None']
+        pipeline = constructQueryPipeline(query_map, econType=econType, lowerLim=lowerLim, upperLim=upperLim, perDay=perDay)
+        cursor = self.db['testMuxCalibInfo'].aggregate(pipeline)
+        documents = list(cursor)
+        # Initialize a dictionary to hold results dynamically
+        result_dict = {}
+        # Loop over each field in the query_map
+        for field_key, field_value in query_map.items():
+            # Extract the relevant field from the documents (handling None and missing keys)
+            result_dict[field_key] = ([
+                doc['latest_data'].get(field_key, None) if doc.get('latest_data') else None
+                for doc in documents
+            ])
+
+        return result_dict
+        
     def retrieveI2Cerrcnts(self, lowerLim=None, upperLim=None, perDay=None, econType = 'ECOND'):
         #This function makes a plot of the PLL Capbank Width
         #if the user provides a range it will plot only over that range

@@ -140,6 +140,12 @@ chipNumPLL, capbankwidth_1p08, capbankwidth_1p2, capbankwidth_1p32, minFreq_1p08
 ## get io results
 delayscan_maxwidth_1p08, delayscan_maxwidth_1p2, delayscan_maxwidth_1p32, phasescan_maxwidth_1p08, phasescan_maxwidth_1p2, phasescan_maxwidth_1p32, chipNumIO = db.testIoCSV(econType='ECONT')
 
+## Test algorithm info 
+results = db.retrieveTestAlgorithmInfo()
+chipNumsPacket = results['chipNum']
+results = {key: value for key, value in results.items() if key != 'chipNum'}
+
+
 print('writing data to csv')
 ## write results to a dictionary
 ## Add in pass/fail results and the timestamp
@@ -222,6 +228,11 @@ for i, chipNum in enumerate(chipNumPLL):
     chip_results[chipNum]['maxFreq_1p08'] = minFreq_1p08[i]
     chip_results[chipNum]['maxFreq_1p2'] = minFreq_1p2[i]
     chip_results[chipNum]['maxFreq_1p32'] = minFreq_1p32[i]
+
+## adding in test_algorithm info 
+for i, chipNum in enumerate(chipNumsPacket):
+    for key in results.keys():
+        chip_results[chipNum][key] = results[key][i]
 
 # Now, convert the defaultdict into a pandas DataFrame
 # The outer dictionary (chip names) becomes the columns, and the inner dictionary keys (test names) become rows
