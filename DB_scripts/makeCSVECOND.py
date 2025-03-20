@@ -93,7 +93,6 @@ keysForPassFail = ['test_read_current_start',
  'test_single_fcsequence_None-__econd_testvectors_exampleData_testVectorInputs_Random_csv-fc_sequence10-pass_thru',
  'test_check_error_counts',
  'test_bist',
- 'test_bist_full',
  'test_streamCompareLoop_0_99',
  'test_streamCompareLoop_1_03',
  'test_streamCompareLoop_1_08']
@@ -167,9 +166,11 @@ for i, chipNum in enumerate(chipNums):
                 chip_results[chipNum]['Pass/Fail'] = 'Fail'
         except KeyError:
             chip_results[chipNum][key] = None
+    chip_results[chipNum]['†est_bist_full'] = outcomes[i]['test_bist_full']
     chip_results[chipNum]['Timestamp'] = updatedTimestamp[i]
     chip_results[chipNum]['Socket'] = socket[i]
     chip_results[chipNum]['Tray'] = str(chipNum)[:2]
+    
     ## initializing these because some chips were not run on the streamCompare test
     chip_results[chipNum]['SCTestWordCount0p99V'] = None
     chip_results[chipNum]['SCTestErrCount0p99V'] = None
