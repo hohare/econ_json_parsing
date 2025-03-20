@@ -17,6 +17,10 @@ odir = args.odir + '/econdCSV'
 if not os.path.isdir(odir):
     os.makedirs(odir)
 
+def convertChipNumsToInt(chipNums):
+    return [int(x) for x in chipNums]
+
+
 db = Database(args.dbaddress, client = 'econdDB')
 chip_results = defaultdict(lambda: defaultdict(float))
 ##TO DO: if there are multiple assert statements remove from the list and query the metadata from the table 
@@ -121,6 +125,7 @@ for i, volt in enumerate(voltages):
         break
 ## Get Pass/fail results
 outcomes, chipNums, Timestamp, IP = db.getPassFailResults()
+chipNums = convertChipNumsToInt(chipNums)
 socket = replaced_arr = ['B' if x == '46' else 'A' for x in IP]
 updatedTimestamp = [
     datetime.datetime.strptime('2024-11-01','%Y-%m-%d') if date.year==1970 else date for date in Timestamp
@@ -129,26 +134,27 @@ updatedTimestamp = [
 
 ## get streamCompare results
 word_err_count_0p99, word_err_count_1p03, word_err_count_1p08, word_err_count_1p20, chipNumSC = db.testStreamComparison()
-
+chipNumSC = convertChipNumsToInt(chipNumSC)
 ## get current reading and temperature results
 current, voltage, current_during_hardreset, current_after_hardreset, current_during_softreset, current_after_softreset, current_runbit_set, temperature, chipNumCurrent = db.getVoltageAndCurrentCSV()
-
+chipNumCurrent = convertChipNumsToInt(chipNumCurrent)
 ## get results from teat_packets
 results = db.retrieveTestPacketInfo()
 chipNumsPacket = results['chipNum']
 results = {key: value for key, value in results.items() if key != 'chipNum'}
-
+chipNumsPacket = convertChipNumsToInt(chipNumsPacket)
 ## get results from I2C read/write errors
 chipNumI2C, n_read_errors_asic, n_read_errors_emulator, n_write_errors_asic, n_write_errors_emulator= db.retrieveI2Cerrcnts()
-
+chipNumI2C = convertChipNumsToInt(chipNumI2C)
 ## get pll results
 chipNumPLL, capbankwidth_1p08, capbankwidth_1p2, capbankwidth_1p32, minFreq_1p08, minFreq_1p2, minFreq_1p32, maxFreq_1p08, maxFreq_1p2, maxFreq_1p32= db.testPllCSV()
-
+chipNumPLL = convertChipNumsToInt(chipNumPLL)
 ## get io results
 delayscan_maxwidth_1p08, delayscan_maxwidth_1p2, delayscan_maxwidth_1p32, phasescan_maxwidth_1p08, phasescan_maxwidth_1p2, phasescan_maxwidth_1p32, chipNumIO = db.testIoCSV()
-
+chipNumIO = convertChipNumsToInt(chipNumIO)
 ## get first failure results
 firstFailure, chipNumFF = db.getFirstFailureCSV()
+chipNumFF = convertChipNumsToInt(chipNumFF)
 
 print('writing data to csv')
 ## write results to a dictionary

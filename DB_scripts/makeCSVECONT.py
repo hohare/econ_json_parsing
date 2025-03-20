@@ -12,6 +12,8 @@ parser.add_argument("--dbaddress", help="db address from local tunnel", default 
 parser.add_argument("--odir", help="output directory", default = './CSV')
 args = parser.parse_args()
 
+def convertChipNumsToInt(chipNums):
+    return [int(x) for x in chipNums]
 
 timestamp = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 odir = args.odir + '/econtCSV'
@@ -123,6 +125,7 @@ print('Gathering all data')
 
 ## Get Pass/fail results
 outcomes, chipNums, Timestamp, IP = db.getPassFailResults(econType='ECONT')
+chipNums = convertChipNumsToInt(chipNums)
 socket = replaced_arr = ['B' if x == '46' else 'A' for x in IP]
 updatedTimestamp = [
     datetime.datetime.strptime('2024-11-01','%Y-%m-%d') if date.year==1970 else date for date in Timestamp
@@ -131,21 +134,21 @@ updatedTimestamp = [
 
 ## get current reading and temperature results
 current, voltage, current_during_hardreset, current_after_hardreset, current_during_softreset, current_after_softreset, current_runbit_set, temperature, chipNumCurrent = db.getVoltageAndCurrentCSV(econType='ECONT')
-
+chipNumCurrent = convertChipNumsToInt(chipNumCurrent)
 ## get results from I2C read/write errors
 chipNumI2C, n_read_errors_asic, n_read_errors_emulator, n_write_errors_asic, n_write_errors_emulator= db.retrieveI2Cerrcnts(econType='ECONT')
 
 ## get pll results
 chipNumPLL, capbankwidth_1p08, capbankwidth_1p2, capbankwidth_1p32, minFreq_1p08, minFreq_1p2, minFreq_1p32, maxFreq_1p08, maxFreq_1p2, maxFreq_1p32= db.testPllCSV(econType='ECONT')
-
+chipNumPLL = convertChipNumsToInt(chipNumPLL)
 ## get io results
 delayscan_maxwidth_1p08, delayscan_maxwidth_1p2, delayscan_maxwidth_1p32, phasescan_maxwidth_1p08, phasescan_maxwidth_1p2, phasescan_maxwidth_1p32, chipNumIO = db.testIoCSV(econType='ECONT')
-
+chipNumIO = convertChipNumsToInt(chipNumIO)
 ## Test algorithm info 
 results = db.retrieveTestAlgorithmInfo()
 chipNumsPacket = results['chipNum']
 results = {key: value for key, value in results.items() if key != 'chipNum'}
-
+chipNumsPacket = convertChipNumsToInt(chipNumsPacket)
 
 print('writing data to csv')
 ## write results to a dictionary
