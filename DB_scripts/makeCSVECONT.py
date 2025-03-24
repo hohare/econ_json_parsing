@@ -192,34 +192,34 @@ for i, chipNum in enumerate(chipNumI2C):
 for i, chipNum in enumerate(chipNumIO):
     for etx in range(13):
         if delayscan_maxwidth_1p08[i] == None: 
-            chip_results[chipNum][f'delayscan_madwidth_1p08_etx_{etx}'] = None
+            chip_results[chipNum][f'delayscan_maxwidth_1p08_etx_{etx}'] = None
         else:
-            chip_results[chipNum][f'delayscan_madwidth_1p08_etx_{etx}'] = delayscan_maxwidth_1p08[i][etx]
+            chip_results[chipNum][f'delayscan_maxwidth_1p08_etx_{etx}'] = delayscan_maxwidth_1p08[i][etx]
             
         if delayscan_maxwidth_1p2[i] == None: 
-            chip_results[chipNum][f'delayscan_madwidth_1p2_etx_{etx}'] = None
+            chip_results[chipNum][f'delayscan_maxwidth_1p2_etx_{etx}'] = None
         else:
-            chip_results[chipNum][f'delayscan_madwidth_1p2_etx_{etx}'] = delayscan_maxwidth_1p2[i][etx]
+            chip_results[chipNum][f'delayscan_maxwidth_1p2_etx_{etx}'] = delayscan_maxwidth_1p2[i][etx]
 
         if delayscan_maxwidth_1p32[i] == None: 
-            chip_results[chipNum][f'delayscan_madwidth_1p32_etx_{etx}'] = None
+            chip_results[chipNum][f'delayscan_maxwidth_1p32_etx_{etx}'] = None
         else:
-            chip_results[chipNum][f'delayscan_madwidth_1p32_etx_{etx}'] = delayscan_maxwidth_1p32[i][etx]
+            chip_results[chipNum][f'delayscan_maxwidth_1p32_etx_{etx}'] = delayscan_maxwidth_1p32[i][etx]
     for erx in range(12):
         if phasescan_maxwidth_1p08[i] == None: 
-            chip_results[chipNum][f'phasescan_madwidth_1p08_etx_{erx}'] = None
+            chip_results[chipNum][f'phasescan_maxwidth_1p08_etx_{erx}'] = None
         else:
-            chip_results[chipNum][f'phasescan_madwidth_1p08_etx_{erx}'] = phasescan_maxwidth_1p08[i][erx]
+            chip_results[chipNum][f'phasescan_maxwidth_1p08_etx_{erx}'] = phasescan_maxwidth_1p08[i][erx]
             
         if phasescan_maxwidth_1p2[i] == None: 
-            chip_results[chipNum][f'phasescan_madwidth_1p2_etx_{erx}'] = None
+            chip_results[chipNum][f'phasescan_maxwidth_1p2_etx_{erx}'] = None
         else:
-            chip_results[chipNum][f'phasescan_madwidth_1p2_etx_{erx}'] = phasescan_maxwidth_1p2[i][erx]
+            chip_results[chipNum][f'phasescan_maxwidth_1p2_etx_{erx}'] = phasescan_maxwidth_1p2[i][erx]
 
         if phasescan_maxwidth_1p32[i] == None: 
-            chip_results[chipNum][f'phasescan_madwidth_1p32_erx_{etx}'] = None
+            chip_results[chipNum][f'phasescan_maxwidth_1p32_erx_{etx}'] = None
         else:
-            chip_results[chipNum][f'phasescan_madwidth_1p32_erx_{etx}'] = phasescan_maxwidth_1p32[i][erx]
+            chip_results[chipNum][f'phasescan_maxwidth_1p32_erx_{etx}'] = phasescan_maxwidth_1p32[i][erx]
 
 ## Adding in Test_PLL info
 for i, chipNum in enumerate(chipNumPLL):

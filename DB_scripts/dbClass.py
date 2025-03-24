@@ -887,7 +887,7 @@ class Database:
              'None':{
             'delayscan_maxwidth_1p08':'test_info.test_eTX_delayscan_1_08.metadata.max_width',
             'delayscan_maxwidth_1p2':'test_info.test_eTX_delayscan_1_2.metadata.max_width',
-            'delayscan_maxwidth_1p32':'test_info.test_eTX_delayscan_1_032.metadata.max_width',
+            'delayscan_maxwidth_1p32':'test_info.test_eTX_delayscan_1_32.metadata.max_width',
             'phasescan_maxwidth_1p08':'test_info.test_ePortRXPRBS_1_08.metadata.maxwidth',
             'phasescan_maxwidth_1p2':'test_info.test_ePortRXPRBS_1_2.metadata.maxwidth',
             'phasescan_maxwidth_1p32':'test_info.test_ePortRXPRBS_1_32.metadata.maxwidth',
