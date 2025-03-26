@@ -249,27 +249,53 @@ def jsonFileUploader(fname, mydatabase):
         'ECON_type':(fname.split("report"))[1].split("_")[1],
         'Timestamp':datetime.strptime((fname.split('/')[-1].split('chip')[-1].split('_')[-2] + ' '+fname.split('/')[-1].split('chip')[-1].split('_')[-1].split('.')[0]), "%Y-%m-%d %H-%M-%S"),
     }
-    testmuxcalib_info = {
-        'test_info':{f"{stringReplace(test['nodeid'].split('::')[1])}": {'metadata':test['metadata'] if 'metadata' in test else None,
-                                                           'outcome': test['outcome'],
-                                                           'keywords': test['keywords'],
-                                                           'setup':test['setup'] if 'setup' in test else None,
-                                                           'call':test['call'] if 'call' in test else None,
-                                                           'teardown':test['teardown'] if 'teardown' in test else None,
-                                                           'failure_information':grabFailureInfo(test),
-                                                           } for test in data['tests'] if 'test_mux_fix' in test['nodeid']},
-        "chip_number": data["chip_number"],
-        "branch": data['branch'],
-        'commit_hash': data['commit_hash'],
-        'remote_url': data['remote_url'],
-        'FPGA-hexa-IP': data['FPGA-hexa-IP'],
-        'status': data['status'],
-        'firmware_name': data['firmware_name'],
-        'firmware_git_desc': data['firmware_git_desc'],
-        'filename': fname,
-        'ECON_type':(fname.split("report"))[1].split("_")[1],
-        'Timestamp':datetime.strptime((fname.split('/')[-1].split('chip')[-1].split('_')[-2] + ' '+fname.split('/')[-1].split('chip')[-1].split('_')[-1].split('.')[0]), "%Y-%m-%d %H-%M-%S"),
-    }
+    try:
+        testmuxcalib_info = {
+            'test_info':{f"{stringReplace(test['nodeid'].split('::')[1])}": {'metadata':test['metadata'] if 'metadata' in test else None,
+                                                               'outcome': test['outcome'],
+                                                               'keywords': test['keywords'],
+                                                               'setup':test['setup'] if 'setup' in test else None,
+                                                               'call':test['call'] if 'call' in test else None,
+                                                               'teardown':test['teardown'] if 'teardown' in test else None,
+                                                               'failure_information':grabFailureInfo(test),
+                                                               } for test in data['tests'] if 'test_mux_fix' in test['nodeid']},
+            "chip_number": data["chip_number"],
+            "branch": data['branch'],
+            'commit_hash': data['commit_hash'],
+            'remote_url': data['remote_url'],
+            'FPGA-hexa-IP': data['FPGA-hexa-IP'],
+            'status': data['status'],
+            'firmware_name': data['firmware_name'],
+            'firmware_git_desc': data['firmware_git_desc'],
+            'filename': fname,
+            'ECON_type':(fname.split("report"))[1].split("_")[1],
+            'Timestamp':datetime.strptime((fname.split('/')[-1].split('chip')[-1].split('_')[-2] + ' '+fname.split('/')[-1].split('chip')[-1].split('_')[-1].split('.')[0]), "%Y-%m-%d %H-%M-%S"),
+        }
+        mydatabase['testMuxCalibInfo'].insert_one(testmuxcalib_info)
+    except:
+        testmuxcalib_info = {
+            'test_info':{f"{stringReplace(test['nodeid'].split('::')[1])}": {
+                                                               'outcome': test['outcome'],
+                                                               'keywords': test['keywords'],
+                                                               'setup':test['setup'] if 'setup' in test else None,
+                                                               'call':test['call'] if 'call' in test else None,
+                                                               'teardown':test['teardown'] if 'teardown' in test else None,
+                                                               'failure_information':grabFailureInfo(test),
+                                                               } for test in data['tests'] if 'test_mux_fix' in test['nodeid']},
+            "chip_number": data["chip_number"],
+            "branch": data['branch'],
+            'commit_hash': data['commit_hash'],
+            'remote_url': data['remote_url'],
+            'FPGA-hexa-IP': data['FPGA-hexa-IP'],
+            'status': data['status'],
+            'firmware_name': data['firmware_name'],
+            'firmware_git_desc': data['firmware_git_desc'],
+            'filename': fname,
+            'ECON_type':(fname.split("report"))[1].split("_")[1],
+            'Timestamp':datetime.strptime((fname.split('/')[-1].split('chip')[-1].split('_')[-2] + ' '+fname.split('/')[-1].split('chip')[-1].split('_')[-1].split('.')[0]), "%Y-%m-%d %H-%M-%S"),
+        }
+        mydatabase['testMuxCalibInfo'].insert_one(testmuxcalib_info)
+        
     testresetrequest_info = {
         'test_info':{f"{stringReplace(test['nodeid'].split('::')[1])}": {'metadata':test['metadata'] if 'metadata' in test else None,
                                                            'outcome': test['outcome'],
@@ -461,7 +487,6 @@ def jsonFileUploader(fname, mydatabase):
     mydatabase['testCommonModeInfo'].insert_one(testcommonmode_info)
     mydatabase['testErrInInfo'].insert_one(testerrin_info)
     mydatabase['testInputAlignerInfo'].insert_one(testinputaligner_info)
-    mydatabase['testMuxCalibInfo'].insert_one(testmuxcalib_info)
     mydatabase['testResetRequestInfo'].insert_one(testresetrequest_info)
     mydatabase['testSerializerInfo'].insert_one(testserializer_info) 
     mydatabase['testAlgorithmInfo'].insert_one(testalgorithm_info)

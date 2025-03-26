@@ -229,9 +229,9 @@ for i, chipNum in enumerate(chipNumPLL):
     chip_results[chipNum]['minFreq_1p08'] = minFreq_1p08[i]
     chip_results[chipNum]['minFreq_1p2'] = minFreq_1p2[i]
     chip_results[chipNum]['minFreq_1p32'] = minFreq_1p32[i]
-    chip_results[chipNum]['maxFreq_1p08'] = minFreq_1p08[i]
-    chip_results[chipNum]['maxFreq_1p2'] = minFreq_1p2[i]
-    chip_results[chipNum]['maxFreq_1p32'] = minFreq_1p32[i]
+    chip_results[chipNum]['maxFreq_1p08'] = maxFreq_1p08[i]
+    chip_results[chipNum]['maxFreq_1p2'] = maxFreq_1p2[i]
+    chip_results[chipNum]['maxFreq_1p32'] = maxFreq_1p32[i]
 
 ## adding in test_algorithm info 
 for i, chipNum in enumerate(chipNumsPacket):
