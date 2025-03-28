@@ -39,6 +39,14 @@ def grabFailureInfo(test):
                         "failure_code_line": test["call"]["crash"]["lineno"],
                 } if 'failed' in test['outcome'] else None,}
     return result
+def convert_values_to_string(d):
+    # Check if the dictionary is empty
+    if not d:
+        return d  # Return the empty dictionary if it's empty
+    
+    # Convert all values to strings if the dictionary is not empty
+    return {key: str(value) for key, value in d.items()}
+
 
 def jsonFileUploader(fname, mydatabase):
     ## open the JSON File
@@ -60,7 +68,17 @@ def jsonFileUploader(fname, mydatabase):
                 test['metadata']['snapshots'] = str(test['metadata']['snapshots'])
             except:
                 print(f'No metadata in {test["nodeid"]}')
-    
+        if 'test_soft_reset_i2c_allregisters' in test['nodeid']:
+            test['metadata']['mismatch_dict'] = convert_values_to_string(test['metadata']['mismatch_dict'])
+        if 'test_hard_reset_i2c_allregisters' in test['nodeid']:
+            test['metadata']['mismatch_dict'] = convert_values_to_string(test['metadata']['mismatch_dict'])
+        if 'test_rw_allregisters[0]' in test['nodeid']:
+            test['metadata']['mismatch_dict'] = convert_values_to_string(test['metadata']['mismatch_dict'])
+        if 'test_rw_allregisters[255]' in test['nodeid']:
+            test['metadata']['mismatch_dict'] = convert_values_to_string(test['metadata']['mismatch_dict'])
+        if 'test_chip_sync' in test['nodeid']:
+            test['metadata']['mismatch_dict'] = convert_values_to_string(test['metadata']['mismatch_dict'])
+        
     testingSummary = {
             "summary": {'passed': data['summary']['passed'], 'total':data['summary']['total'], 'collected':data['summary']['collected']},
             "individual_test_outcomes": {

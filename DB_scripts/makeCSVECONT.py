@@ -137,7 +137,7 @@ current, voltage, current_during_hardreset, current_after_hardreset, current_dur
 chipNumCurrent = convertChipNumsToInt(chipNumCurrent)
 ## get results from I2C read/write errors
 chipNumI2C, n_read_errors_asic, n_read_errors_emulator, n_write_errors_asic, n_write_errors_emulator= db.retrieveI2Cerrcnts(econType='ECONT')
-
+chipNumI2C = convertChipNumsToInt(chipNumI2C)
 ## get pll results
 chipNumPLL, capbankwidth_1p08, capbankwidth_1p2, capbankwidth_1p32, minFreq_1p08, minFreq_1p2, minFreq_1p32, maxFreq_1p08, maxFreq_1p2, maxFreq_1p32= db.testPllCSV(econType='ECONT')
 chipNumPLL = convertChipNumsToInt(chipNumPLL)

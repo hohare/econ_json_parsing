@@ -118,6 +118,7 @@ def stringReplace(word):
 print('Gathering all data')
 ## Get bist results
 voltages, bist_results, chipNumBIST = db.getBISTInfoFull()
+chipNumBIST = convertChipNumsToInt(chipNumBIST)
 goodIdx = 0
 for i, volt in enumerate(voltages):
     if volt != None:
