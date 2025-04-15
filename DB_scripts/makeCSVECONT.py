@@ -128,8 +128,7 @@ outcomes, chipNums, Timestamp, IP = db.getPassFailResults(econType='ECONT')
 chipNums = convertChipNumsToInt(chipNums)
 socket = replaced_arr = ['B' if x == '46' else 'A' for x in IP]
 updatedTimestamp = [
-    datetime.datetime.strptime('2024-11-01','%Y-%m-%d') if date.year==1970 else date for date in Timestamp
-    # date.replace(year=2025) if date.year == 1970 else date for date in Timestamp
+    date.replace(year=2024, month=11, day=1) if date.year == 1970 else date for date in Timestamp
 ]
 
 ## get current reading and temperature results
