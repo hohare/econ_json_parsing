@@ -133,7 +133,7 @@ updatedTimestamp = [
 ]
 
 ## get streamCompare results
-word_err_count_0p99, word_err_count_1p03, word_err_count_1p08, word_err_count_1p20, chipNumSC = db.testStreamComparison()
+word_err_count_0p99, word_err_count_1p03, word_err_count_1p08, word_err_count_1p20, word_err_count_1p01, word_err_count_1p05, word_err_count_1p14, word_err_count_1p26, word_err_count_1p32, chipNumSC = db.testStreamComparison()
 chipNumSC = convertChipNumsToInt(chipNumSC)
 ## get current reading and temperature results
 current, voltage, current_during_hardreset, current_after_hardreset, current_during_softreset, current_after_softreset, current_runbit_set, temperature, chipNumCurrent = db.getVoltageAndCurrentCSV()
@@ -186,7 +186,16 @@ for i, chipNum in enumerate(chipNums):
     chip_results[chipNum]['SCTestErrCount1p08V'] = None
     chip_results[chipNum]['SCTestWordCount1p20V'] = None
     chip_results[chipNum]['SCTestErrCount1p20V'] = None
-    
+    chip_results[chipNum]['SCTestWordCount1p01V'] = None
+    chip_results[chipNum]['SCTestErrCount1p01V'] = None
+    chip_results[chipNum]['SCTestWordCount1p05V'] = None
+    chip_results[chipNum]['SCTestErrCount1p05V'] = None
+    chip_results[chipNum]['SCTestWordCount1p14V'] = None
+    chip_results[chipNum]['SCTestErrCount1p14V'] = None
+    chip_results[chipNum]['SCTestWordCount1p26V'] = None
+    chip_results[chipNum]['SCTestErrCount1p26V'] = None
+    chip_results[chipNum]['SCTestWordCount1p32V'] = None
+    chip_results[chipNum]['SCTestErrCount1p32V'] = None
 
 ## add in results from current draw plus the temperature
 for i, chipNum in enumerate(chipNumCurrent):
@@ -235,6 +244,36 @@ for i, chipNum in enumerate(chipNumSC):
     else:
         chip_results[chipNum]['SCTestWordCount1p20V'] = word_err_count_1p20[i][-1][1]
         chip_results[chipNum]['SCTestErrCount1p20V'] = word_err_count_1p20[i][-1][-1]
+    if word_err_count_1p01[i] == None:
+        chip_results[chipNum]['SCTestWordCount1p01V'] = None
+        chip_results[chipNum]['SCTestErrCount1p01V'] = None
+    else:
+        chip_results[chipNum]['SCTestWordCount1p01V'] = word_err_count_1p01[i][-1][1]
+        chip_results[chipNum]['SCTestErrCount1p01V'] = word_err_count_1p01[i][-1][-1]
+    if word_err_count_1p05[i] == None:
+        chip_results[chipNum]['SCTestWordCount1p05V'] = None
+        chip_results[chipNum]['SCTestErrCount1p05V'] = None
+    else:
+        chip_results[chipNum]['SCTestWordCount1p05V'] = word_err_count_1p05[i][-1][1]
+        chip_results[chipNum]['SCTestErrCount1p05V'] = word_err_count_1p05[i][-1][-1]
+    if word_err_count_1p14[i] == None:
+        chip_results[chipNum]['SCTestWordCount1p14V'] = None
+        chip_results[chipNum]['SCTestErrCount1p14V'] = None
+    else:
+        chip_results[chipNum]['SCTestWordCount1p14V'] = word_err_count_1p14[i][-1][1]
+        chip_results[chipNum]['SCTestErrCount1p14V'] = word_err_count_1p14[i][-1][-1]
+    if word_err_count_1p26[i] == None:
+        chip_results[chipNum]['SCTestWordCount1p26V'] = None
+        chip_results[chipNum]['SCTestErrCount1p26V'] = None
+    else:
+        chip_results[chipNum]['SCTestWordCount1p26V'] = word_err_count_1p26[i][-1][1]
+        chip_results[chipNum]['SCTestErrCount1p26V'] = word_err_count_1p26[i][-1][-1]
+    if word_err_count_1p32[i] == None:
+        chip_results[chipNum]['SCTestWordCount1p32V'] = None
+        chip_results[chipNum]['SCTestErrCount1p32V'] = None
+    else:
+        chip_results[chipNum]['SCTestWordCount1p32V'] = word_err_count_1p32[i][-1][1]
+        chip_results[chipNum]['SCTestErrCount1p32V'] = word_err_count_1p32[i][-1][-1]
         
 ## add bist results
 for i, chipNum in enumerate(chipNumBIST):

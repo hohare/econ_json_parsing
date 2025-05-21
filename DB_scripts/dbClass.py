@@ -716,6 +716,11 @@ class Database:
                         'word_err_count_1p03':'test_info.test_streamCompareLoop_1_03.metadata.word_err_count',
                         'word_err_count_1p08':'test_info.test_streamCompareLoop_1_08.metadata.word_err_count',
                         'word_err_count_1p20':'test_info.test_streamCompareLoop_1_2.metadata.word_err_count',
+                        'word_err_count_1p01':'test_info.test_streamCompareLoop_1_01.metadata.word_err_count',
+                        'word_err_count_1p05':'test_info.test_streamCompareLoop_1_05.metadata.word_err_count',
+                        'word_err_count_1p14':'test_info.test_streamCompareLoop_1_14.metadata.word_err_count',
+                        'word_err_count_1p26':'test_info.test_streamCompareLoop_1_26.metadata.word_err_count',
+                        'word_err_count_1p32':'test_info.test_streamCompareLoop_1_32.metadata.word_err_count',
                         'chipNum':"chip_number",
 
                 }
@@ -744,7 +749,22 @@ class Database:
             word_err_count_1p20 = ([
             doc['latest_data']['word_err_count_1p20'] if doc.get('latest_data') is not None and 'word_err_count_1p20' in doc['latest_data'].keys() else None for doc in documents
             ])
-            return word_err_count_0p99, word_err_count_1p03, word_err_count_1p08, word_err_count_1p20, chipNum
+            word_err_count_1p01 = ([
+            doc['latest_data']['word_err_count_1p01'] if doc.get('latest_data') is not None and 'word_err_count_1p01' in doc['latest_data'].keys() else None for doc in documents
+            ])
+            word_err_count_1p05 = ([
+            doc['latest_data']['word_err_count_1p05'] if doc.get('latest_data') is not None and 'word_err_count_1p05' in doc['latest_data'].keys() else None for doc in documents
+            ])
+            word_err_count_1p14 = ([
+            doc['latest_data']['word_err_count_1p14'] if doc.get('latest_data') is not None and 'word_err_count_1p14' in doc['latest_data'].keys() else None for doc in documents
+            ])
+            word_err_count_1p26 = ([
+            doc['latest_data']['word_err_count_1p26'] if doc.get('latest_data') is not None and 'word_err_count_1p26' in doc['latest_data'].keys() else None for doc in documents
+            ])
+            word_err_count_1p32 = ([
+            doc['latest_data']['word_err_count_1p32'] if doc.get('latest_data') is not None and 'word_err_count_1p32' in doc['latest_data'].keys() else None for doc in documents
+            ])
+            return word_err_count_0p99, word_err_count_1p03, word_err_count_1p08, word_err_count_1p20, word_err_count_1p01, word_err_count_1p05, word_err_count_1p14, word_err_count_1p26, word_err_count_1p32, chipNum
 
 
 
