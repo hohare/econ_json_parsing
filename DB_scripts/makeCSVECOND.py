@@ -172,7 +172,7 @@ for i, chipNum in enumerate(chipNums):
                 chip_results[chipNum]['Pass/Fail'] = 'Fail'
         except KeyError:
             chip_results[chipNum][key] = None
-    chip_results[chipNum]['†est_bist_full'] = outcomes[i]['test_bist_full']
+    chip_results[chipNum]['Test_bist_full'] = outcomes[i]['test_bist_full']
     chip_results[chipNum]['Timestamp'] = updatedTimestamp[i]
     chip_results[chipNum]['Socket'] = socket[i]
     chip_results[chipNum]['Tray'] = str(chipNum)[:2]
