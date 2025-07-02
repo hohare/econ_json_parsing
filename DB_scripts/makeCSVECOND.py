@@ -11,6 +11,8 @@ timestampStr = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 parser = argparse.ArgumentParser()
 parser.add_argument("--dbaddress", help="db address from local tunnel", default = 27017)
 parser.add_argument("--odir", help="output directory", default = './CSV')
+parser.add_argument("--timePeriod", help="'day', 'week', 'month', 'year'", default = 'week')
+parser.add_argument("--endDate", help="Enter the last date in scan period in 'Y-m-d H-M-S' format", default = None)
 args = parser.parse_args()
 
 odir = args.odir + '/econdCSV'
@@ -20,6 +22,12 @@ if not os.path.isdir(odir):
 def convertChipNumsToInt(chipNums):
     return [int(x) for x in chipNums]
 
+if args.endDate is None:
+    startTime = datetime.datetime.now()
+else:
+    startTime = datetime.datetime.strptime(args.endDate, "%Y-%m-%d %H-%M-%S")
+
+timePeriod=args.timePeriod
 
 db = Database(args.dbaddress, client = 'econdDB')
 chip_results = defaultdict(lambda: defaultdict(float))
@@ -115,9 +123,9 @@ def stringReplace(word):
         word = word.replace(".","p")
     return word
 
-print('Gathering all data')
+print(f'[{datetime.datetime.now()}] - Gathering all data')
 ## Get bist results
-voltages, bist_results, chipNumBIST = db.getBISTInfoFull()
+voltages, bist_results, chipNumBIST = db.getBISTInfoFull(timeEnd=startTime, timePeriod=timePeriod)
 chipNumBIST = convertChipNumsToInt(chipNumBIST)
 goodIdx = 0
 for i, volt in enumerate(voltages):
@@ -125,7 +133,7 @@ for i, volt in enumerate(voltages):
         goodIdx = i
         break
 ## Get Pass/fail results
-outcomes, chipNums, Timestamp, IP = db.getPassFailResults()
+outcomes, chipNums, Timestamp, IP = db.getPassFailResults(timeEnd=startTime, timePeriod=timePeriod)
 chipNums = convertChipNumsToInt(chipNums)
 socket = replaced_arr = ['B' if x == '46' else 'A' for x in IP]
 updatedTimestamp = [
@@ -133,30 +141,30 @@ updatedTimestamp = [
 ]
 
 ## get streamCompare results
-word_err_count_0p99, word_err_count_1p03, word_err_count_1p08, word_err_count_1p20, word_err_count_1p01, word_err_count_1p05, word_err_count_1p14, word_err_count_1p26, word_err_count_1p32, chipNumSC = db.testStreamComparison()
+word_err_count_0p99, word_err_count_1p03, word_err_count_1p08, word_err_count_1p20, word_err_count_1p01, word_err_count_1p05, word_err_count_1p14, word_err_count_1p26, word_err_count_1p32, chipNumSC = db.testStreamComparison(timeEnd=startTime, timePeriod=timePeriod)
 chipNumSC = convertChipNumsToInt(chipNumSC)
 ## get current reading and temperature results
-current, voltage, current_during_hardreset, current_after_hardreset, current_during_softreset, current_after_softreset, current_runbit_set, temperature, chipNumCurrent = db.getVoltageAndCurrentCSV()
+current, voltage, current_during_hardreset, current_after_hardreset, current_during_softreset, current_after_softreset, current_runbit_set, temperature, chipNumCurrent = db.getVoltageAndCurrentCSV(timeEnd=startTime, timePeriod=timePeriod)
 chipNumCurrent = convertChipNumsToInt(chipNumCurrent)
 ## get results from teat_packets
-results = db.retrieveTestPacketInfo()
+results = db.retrieveTestPacketInfo(timeEnd=startTime, timePeriod=timePeriod)
 chipNumsPacket = results['chipNum']
 results = {key: value for key, value in results.items() if key != 'chipNum'}
 chipNumsPacket = convertChipNumsToInt(chipNumsPacket)
 ## get results from I2C read/write errors
-chipNumI2C, n_read_errors_asic, n_read_errors_emulator, n_write_errors_asic, n_write_errors_emulator= db.retrieveI2Cerrcnts()
+chipNumI2C, n_read_errors_asic, n_read_errors_emulator, n_write_errors_asic, n_write_errors_emulator= db.retrieveI2Cerrcnts(timeEnd=startTime, timePeriod=timePeriod)
 chipNumI2C = convertChipNumsToInt(chipNumI2C)
 ## get pll results
-chipNumPLL, capbankwidth_1p08, capbankwidth_1p2, capbankwidth_1p32, minFreq_1p08, minFreq_1p2, minFreq_1p32, maxFreq_1p08, maxFreq_1p2, maxFreq_1p32= db.testPllCSV()
+chipNumPLL, capbankwidth_1p08, capbankwidth_1p2, capbankwidth_1p32, minFreq_1p08, minFreq_1p2, minFreq_1p32, maxFreq_1p08, maxFreq_1p2, maxFreq_1p32= db.testPllCSV(timeEnd=startTime, timePeriod=timePeriod)
 chipNumPLL = convertChipNumsToInt(chipNumPLL)
 ## get io results
-delayscan_maxwidth_1p08, delayscan_maxwidth_1p2, delayscan_maxwidth_1p32, phasescan_maxwidth_1p08, phasescan_maxwidth_1p2, phasescan_maxwidth_1p32, chipNumIO = db.testIoCSV()
+delayscan_maxwidth_1p08, delayscan_maxwidth_1p2, delayscan_maxwidth_1p32, phasescan_maxwidth_1p08, phasescan_maxwidth_1p2, phasescan_maxwidth_1p32, chipNumIO = db.testIoCSV(timeEnd=startTime, timePeriod=timePeriod)
 chipNumIO = convertChipNumsToInt(chipNumIO)
 ## get first failure results
-firstFailure, chipNumFF = db.getFirstFailureCSV()
+firstFailure, chipNumFF = db.getFirstFailureCSV(timeEnd=startTime, timePeriod=timePeriod)
 chipNumFF = convertChipNumsToInt(chipNumFF)
 
-print('writing data to csv')
+print(f'[{datetime.datetime.now()}] - Writing data to csv')
 ## write results to a dictionary
 ## Add in pass/fail results and the timestamp
 for i, chipNum in enumerate(chipNums):
@@ -356,4 +364,4 @@ df = pd.DataFrame.from_dict(chip_results, orient='index')
 # Save the DataFrame to a CSV file
 df.to_csv(f'{odir}/econd_chip_test_results_{timestampStr}.csv')
 
-print('Done!')
+print(f'[{datetime.datetime.now()}] - Done!')

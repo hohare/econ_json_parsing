@@ -2,46 +2,81 @@ import pymongo
 import numpy as np
 import pandas as pd
 from datetime import timedelta
+import datetime
 
-def constructQueryPipeline(query_map, econType='ECOND', lowerLim = None, upperLim=None, chipNum=None, perDay=None):
+def constructQueryPipeline(query_map, lowerLim=None, upperLim=None, chipNum=None, timeEnd=None, timePeriod='day'):
+    """
+    Constructs an aggregation pipeline to query test packet information from the database.
+    
+    Parameters:
+    - query_map (dict): A mapping of output field names to database field paths, specifying which fields to include in the results.
+    - lowerLim (int or None): Optional lower bound for chip_number filtering (exclusive).
+    - upperLim (int or None): Optional upper bound for chip_number filtering (exclusive).
+    - chipNum (int or None): Optional exact chip_number to filter on.
+    - timeEnd (datetime or None): Optional endpoint of the time range to filter by Timestamp.
+    - timePeriod (str): Time range length for filtering based on timeEnd. Supported values: 'day', 'week', 'month', 'year'.
+    
+    Pipeline steps:
+    1. $match: Filters documents by ECON_type, chip_number range or exact chip number if provided, and Timestamp range based on timeEnd and  
+    timePeriod.
+    2. $project: Selects chip_number, Timestamp, and maps requested fields (from query_map) into a "data" sub-document.
+    3. $match: Filters out documents where the "data" field is None (i.e., missing all requested fields).
+    4. $sort: Sorts documents by Timestamp in descending order, so the latest records come first.
+    5. $group: Groups documents by chip_number, selecting the latest data and timestamp for each chip.
+    
+    Returns:
+    - A MongoDB aggregation pipeline (list of stages) ready to be used with collection.aggregate().
+    """
     match_stage = {
-        "$match": {
-            "ECON_type": econType
-        }
+        '$match': {}
     }
     if lowerLim is not None and upperLim is not None:
         match_stage["$match"]["chip_number"] = {"$lt": upperLim, "$gt": lowerLim}
     if chipNum is not None:
-         match_stage["$match"]["chip_number"] = chipNum
-    if perDay is not None:
-        match_stage["$match"]["Timestamp"] = {"$lt": perDay, "$gt":perDay - timedelta(days=1)}
+        match_stage["$match"]["chip_number"] = chipNum
+
+    if timeEnd is not None:
+        end_date = timeEnd
+        if timePeriod == 'day':
+            start_date = end_date - timedelta(days=1)
+        elif timePeriod == 'week':
+            start_date = end_date - timedelta(weeks=1)
+        elif timePeriod == 'month':
+            start_date = end_date - timedelta(days=30)
+        elif timePeriod == 'year':
+            start_date = end_date - timedelta(days=365)
+        else:
+            raise ValueError(f"Unsupported timePeriod: {timePeriod}. Choose from 'day', 'week', 'month', 'year'.")
+
+        match_stage["$match"]["Timestamp"] = {"$lt": end_date, "$gt": start_date}
+
     pipeline = [
-            match_stage,
-            {
-                "$project": {
-                    "chip_number": 1,
-                    "Timestamp": 1,
-                    "data": {field: f"${query_map[field]}" for field in query_map}
-                }
-            },
-            {
-                "$match": {
-                    "data": {"$ne": None}  # Filter out documents with None width
-                }
-            },
-            {
-                "$sort": {
-                    "Timestamp": -1  # Sort by Timestamp in descending order
-                }
-            },
-            {
-                "$group": {
-                    "_id": "$chip_number",  # Group by chip_number
-                    "latest_data": {"$first": "$data"},  # Get the latest width
-                    "latest_timestamp": {"$first": "$Timestamp"}  # Get the latest timestamp
-                }
+        match_stage,
+        {
+            "$project": {
+                "chip_number": 1,
+                "Timestamp": 1,
+                "data": {field: f"${query_map[field]}" for field in query_map}
             }
-        ]
+        },
+        {
+            "$match": {
+                "data": {"$ne": None}
+            }
+        },
+        {
+            "$sort": {
+                "Timestamp": -1
+            }
+        },
+        {
+            "$group": {
+                "_id": "$chip_number",
+                "latest_data": {"$first": "$data"},
+                "latest_timestamp": {"$first": "$Timestamp"}
+            }
+        }
+    ]
     return pipeline
 
 class Database:
@@ -50,8 +85,29 @@ class Database:
         self.client = pymongo.MongoClient('localhost',ip)
         self.session = self.client.start_session()
         self.db = self.client[client] ## this name will probably change when we decide on an official name
+        self.ensure_common_index('testPacketsInfo')
+        self.ensure_common_index('testBistInfo')
+        self.ensure_common_index('TestSummary')
+        self.ensure_common_index('testOBError')
+        self.ensure_common_index('testPowerInfo')
+        self.ensure_common_index('testI2CInfo')
+        self.ensure_common_index('testPLLInfo')
+        self.ensure_common_index('testIOInfo')
+        self.ensure_common_index('testAlgorithmInfo')
+        
+    def ensure_common_index(self, collection_name):
+        existing_indexes = self.db[collection_name].list_indexes()
+        index_names = [index['name'] for index in existing_indexes]
+    
+        if "timestamp_chip_index" not in index_names:
+            print(f'creating index for {collection_name}')
+            self.db[collection_name].create_index(
+                [("Timestamp", -1), ("chip_number", 1)],
+                name="timestamp_chip_index"
+            )
+            print('finished')
 
-    def pllCapbankWidthPlot(self, lowerLim=None, upperLim=None, perDay=None, voltage = '1p2', econType = 'ECOND'):
+    def pllCapbankWidthPlot(self, lowerLim=None, upperLim=None, voltage = '1p2', timeEnd=None, timePeriod='day'):
         #This function makes a plot of the PLL Capbank Width
         #if the user provides a range it will plot only over that range
         #if not it plots the capbank width over the whole dataset
@@ -66,13 +122,13 @@ class Database:
         if voltage not in voltage_field_map:
             raise ValueError("Invalid voltage specified. Choose from '1p08', '1p2', '1p32'.")
         query_map = voltage_field_map[voltage]
-        pipeline = constructQueryPipeline(query_map, econType=econType, lowerLim = lowerLim, upperLim=upperLim, perDay=perDay)
+        pipeline = constructQueryPipeline(query_map, lowerLim = lowerLim, upperLim=upperLim, timeEnd=timeEnd, timePeriod=timePeriod)
         cursor = self.db['testPLLInfo'].aggregate(pipeline)
         capbankwidth = np.array([doc['latest_data']['capbankwidth'] for doc in cursor if doc.get('latest_data') is not None and 'capbankwidth' in doc['latest_data'].keys()])
         return capbankwidth
 
 
-    def prbsMaxWidthPlot(self, lowerLim=None, upperLim=None, perDay=None, voltage = '1p2', econType = 'ECOND'):
+    def prbsMaxWidthPlot(self, lowerLim=None, upperLim=None, voltage = '1p2', timeEnd=None, timePeriod='day'):
         #This function makes a plot of the PRBS Max Width
         #if the user provides a range it will plot only over that range
         #if not it plots the capbank width over the whole dataset
@@ -87,13 +143,13 @@ class Database:
         if voltage not in voltage_field_map:
             raise ValueError("Invalid voltage specified. Choose from '1p08', '1p2', '1p32'.")
         query_map = voltage_field_map[voltage]
-        pipeline = constructQueryPipeline(query_map, econType=econType, lowerLim = lowerLim, upperLim=upperLim, perDay=perDay)
+        pipeline = constructQueryPipeline(query_map, lowerLim = lowerLim, upperLim=upperLim, timeEnd=timeEnd, timePeriod=timePeriod)
         cursor = self.db['testIOInfo'].aggregate(pipeline)
         maxwidth = np.array([doc['latest_data']['maxwidth'] for doc in cursor if doc.get('latest_data') is not None and 'maxwidth' in doc['latest_data'].keys()])
         return maxwidth
 
 
-    def etxMaxWidthPlot(self, lowerLim=None, upperLim=None, perDay=None, voltage = '1p2', econType = 'ECOND'):
+    def etxMaxWidthPlot(self, lowerLim=None, upperLim=None, voltage = '1p2', timeEnd=None, timePeriod='day'):
         #This function makes a plot of the eTX Delay scan Max Width
         #if the user provides a range it will plot only over that range
         #if not it plots the capbank width over the whole dataset
@@ -108,13 +164,13 @@ class Database:
         if voltage not in voltage_field_map:
             raise ValueError("Invalid voltage specified. Choose from '1p08', '1p2', '1p32'.")
         query_map = voltage_field_map[voltage]
-        pipeline = constructQueryPipeline(query_map, econType=econType, lowerLim = lowerLim, upperLim=upperLim, perDay=perDay)
+        pipeline = constructQueryPipeline(query_map, lowerLim = lowerLim, upperLim=upperLim, timeEnd=timeEnd, timePeriod=timePeriod)
         cursor = self.db['testIOInfo'].aggregate(pipeline)
         maxwidth = np.array([doc['latest_data']['maxwidth'] for doc in cursor if doc.get('latest_data') is not None and 'maxwidth' in doc['latest_data'].keys()])
         return maxwidth
 
 
-    def getVoltageAndCurrent(self, lowerLim=None, upperLim=None, perDay=None, econType = 'ECOND'):
+    def getVoltageAndCurrent(self, lowerLim=None, upperLim=None, timeEnd=None, timePeriod='day'):
         #This function makes a plot of the PLL Capbank Width
         #if the user provides a range it will plot only over that range
         #if not it plots the capbank width over the whole dataset
@@ -136,7 +192,7 @@ class Database:
         }
 
         query_map = voltage_field_map['None']
-        pipeline = constructQueryPipeline(query_map, econType=econType, lowerLim = lowerLim, upperLim=upperLim, perDay=perDay)
+        pipeline = constructQueryPipeline(query_map, lowerLim = lowerLim, upperLim=upperLim, timeEnd=timeEnd, timePeriod=timePeriod)
         cursor = self.db['testPowerInfo'].aggregate(pipeline)
         documents = list(cursor)
         #main measurements
@@ -172,7 +228,7 @@ class Database:
         ])
         return current, voltage, current_during_hardreset, current_after_hardreset, current_during_softreset, current_after_softreset, current_runbit_set
 
-    def getBISTInfo(self, lowerLim=None, upperLim=None, perDay=None, econType='ECOND',tray_number = None):
+    def getBISTInfo(self, lowerLim=None, upperLim=None, tray_number = None, timeEnd=None, timePeriod='day'):
         #This function makes a plot of the PLL Capbank Width
         #if the user provides a range it will plot only over that range
         #if not it plots the capbank width over the whole dataset
@@ -188,7 +244,7 @@ class Database:
         }
 
         query_map = voltage_field_map['None']
-        pipeline = constructQueryPipeline(query_map, econType=econType, lowerLim = lowerLim, upperLim=upperLim, perDay=perDay)
+        pipeline = constructQueryPipeline(query_map, lowerLim = lowerLim, upperLim=upperLim, timeEnd=timeEnd, timePeriod=timePeriod)
         cursor = self.db['testBistInfo'].aggregate(pipeline)
         documents = list(cursor)
 
@@ -206,7 +262,7 @@ class Database:
         ]
         return first_failure, bist_result
 
-    def phaseScan2DPlot(self, chipNum, econType = 'ECOND', voltage = '1p2'):
+    def phaseScan2DPlot(self, chipNum, voltage = '1p2', timeEnd=None, timePeriod='day'):
         #returns the information needed to make the phase scan 2d plot
         #for a given chip number
         #for different voltages use the name argument and please provide a string
@@ -221,13 +277,13 @@ class Database:
         if voltage not in voltage_field_map:
             raise ValueError("Invalid voltage specified. Choose from '1p08', '1p2', '1p32'.")
         query_map = voltage_field_map[voltage]
-        pipeline = constructQueryPipeline(query_map, econType=econType, chipNum=chipNum)
+        pipeline = constructQueryPipeline(query_map, chipNum=chipNum, timeEnd=timeEnd, timePeriod=timePeriod)
         cursor = self.db['testIOInfo'].aggregate(pipeline)
         eRX_errcounts = np.array([doc['latest_data']['eRX_errcounts'] for doc in cursor if doc.get('latest_data') is not None and 'eRX_errcounts' in doc['latest_data'].keys()])
         return eRX_errcounts
 
 
-    def delayScan2DPlot(self, chipNum, econType = 'ECOND', voltage = '1p2'):
+    def delayScan2DPlot(self, chipNum, voltage = '1p2', timeEnd=None, timePeriod='day'):
         #returns the information needed to make the delay scan 2d plot
         #for a given chip number
         #for different voltages use the name argument and please provide a string
@@ -250,7 +306,7 @@ class Database:
         if voltage not in voltage_field_map:
             raise ValueError("Invalid voltage specified. Choose from '1p08', '1p2', '1p32'.")
         query_map = voltage_field_map[voltage]
-        pipeline = constructQueryPipeline(query_map, econType=econType, chipNum=chipNum)
+        pipeline = constructQueryPipeline(query_map, chipNum=chipNum, timeEnd=timeEnd, timePeriod=timePeriod)
         cursor = self.db['testIOInfo'].aggregate(pipeline)
         documents = list(cursor)
         #print(documents)
@@ -266,7 +322,7 @@ class Database:
         return eTX_bitcounts, eTX_errcounts
 
 
-    def getFractionOfTestsPassed(self, econType = 'ECOND', perDay=None, tray_number = None):
+    def getFractionOfTestsPassed(self, tray_number = None, timeEnd=None, timePeriod='day'):
         #This function grabs the fraction of tests that passed
         #So what this does is first count the number of tests that got skipped
         #And subtracts this from the total number of tests that were collected
@@ -282,7 +338,7 @@ class Database:
                     },
         }
         query_map = voltage_field_map['None']
-        pipeline = constructQueryPipeline(query_map, econType=econType, perDay=perDay)
+        pipeline = constructQueryPipeline(query_map, timeEnd=timeEnd, timePeriod=timePeriod)
         cursor = self.db['TestSummary'].aggregate(pipeline)
         x = list(cursor)
 
@@ -311,7 +367,7 @@ class Database:
         # Convert to NumPy array
         return np.array(frac_passed), chip_numbers
 
-    def getTestingSummaries(self, econType = 'ECOND', perDay=None, tray_number = None):
+    def getTestingSummaries(self, tray_number = None, timeEnd=None, timePeriod='day'):
         #This function returns a dataframe for the testing summary plots prepared by Marko
         #Please use the econType argument to specify ECOND or ECONT and the function expects a string for this argument
         voltage_field_map = {
@@ -320,7 +376,7 @@ class Database:
                     },
         }
         query_map = voltage_field_map['None']
-        pipeline = constructQueryPipeline(query_map, econType=econType, perDay=perDay)
+        pipeline = constructQueryPipeline(query_map, timeEnd=timeEnd, timePeriod=timePeriod)
         cursor = self.db['TestSummary'].aggregate(pipeline)
         outcomes = list(cursor)
 
@@ -362,14 +418,14 @@ class Database:
         df = df.T
         df = df/total
         return df
-    def getDuration(self, econType='ECOND', perDay=None, tray_number = None):
+    def getDuration(self, tray_number = None, timeEnd=None, timePeriod='day'):
         durations = self.db['NonTestingInfo'].find({},{'created':'$created', 'duration':'$duration', 'chip_number':'$chip_number', '_id':0})
 
         if tray_number is not None:
             durations = self.filter_by_tray(durations, tray_number)
         return np.array([chip['duration'] for chip in list(durations)])
 
-    def filter_by_tray(self, documents, tray_number, perDay=None):
+    def filter_by_tray(self, documents, tray_number, timeEnd=None, timePeriod='day'):
     # Filter documents by tray number
         filtered_docs = []
         label = 'chip_number'
@@ -385,14 +441,14 @@ class Database:
             #print(chip_number)
         return filtered_docs
 
-    def getTrayNumbers(self, econType='ECOND', perDay=None):
+    def getTrayNumbers(self, timeEnd=None, timePeriod='day'):
         field_map = {'chip_number': '$chip_number', '_id':0}
         trays = self.db['NonTestingInfo'].find({},field_map)
 
         trays = [str(chip['chip_number'])[:2] for chip in trays]
         return sorted(list(set(trays)))
 
-    def testOBErrorInfo(self, econType = 'ECOND', voltage = '0p99', perDay=None, tray_number = None):
+    def testOBErrorInfo(self, voltage = '0p99', tray_number = None, timeEnd=None, timePeriod='day'):
         #Returns info from the OB error test
         #This returns DAQ_asic, DAQ_emu, DAQ_counter, and word_err_cnt
         #This is done for the voltages 0.99, 1.03, and 1.08
@@ -422,7 +478,7 @@ class Database:
         if voltage not in voltage_field_map:
             raise ValueError("Invalid voltage specified. Choose from '1p08', '1p2', '1p32'.")
         query_map = voltage_field_map[voltage]
-        pipeline = constructQueryPipeline(query_map, econType=econType, perDay=perDay)
+        pipeline = constructQueryPipeline(query_map, timeEnd=timeEnd, timePeriod=timePeriod)
         cursor = self.db['testOBError'].aggregate(pipeline)
         documents = list(cursor)
 
@@ -455,7 +511,7 @@ class Database:
 
         return word_err_count
 
-    def getPassFailResults(self, econType = 'ECOND',tray_number = None, perDay=None):
+    def getPassFailResults(self, tray_number = None, timeEnd=None, timePeriod='day'):
         #This function returns a dataframe for the testing summary plots prepared by Marko
         #Please use the econType argument to specify ECOND or ECONT and the function expects a string for this argument
         voltage_field_map = {
@@ -467,7 +523,7 @@ class Database:
                     },
         }
         query_map = voltage_field_map['None']
-        pipeline = constructQueryPipeline(query_map, econType=econType, perDay=perDay)
+        pipeline = constructQueryPipeline(query_map, timeEnd=timeEnd, timePeriod=timePeriod)
         cursor = self.db['TestSummary'].aggregate(pipeline)
         documents = list(cursor)
         testOutcomes = ([
@@ -488,7 +544,7 @@ class Database:
         ])
         return testOutcomes, chipNums, Timestamp, IP
 
-    def retrieveTestPacketInfo(self, lowerLim=None, upperLim=None, perDay=None, econType = 'ECOND'):
+    def retrieveTestPacketInfo(self, lowerLim=None, upperLim=None, timeEnd=None, timePeriod='day'):
         #This function makes a plot of the PLL Capbank Width
         #if the user provides a range it will plot only over that range
         #if not it plots the capbank width over the whole dataset
@@ -533,14 +589,11 @@ class Database:
         }
 
         query_map = voltage_field_map['None']
-        pipeline = constructQueryPipeline(query_map, econType=econType, lowerLim=lowerLim, upperLim=upperLim, perDay=perDay)
+        pipeline = constructQueryPipeline(query_map, lowerLim=lowerLim, upperLim=upperLim, timeEnd=timeEnd, timePeriod=timePeriod)
         cursor = self.db['testPacketsInfo'].aggregate(pipeline)
         documents = list(cursor)
         # Initialize a dictionary to hold results dynamically
         result_dict = {}
-        test_single_fcsequence_counter_100_None_fc_sequence0_eTx_0_errcnt = np.array([
-            doc['latest_data']['test_single_fcsequence_counter_100-None-fc_sequence0-eTx-0-errcnt'] if doc.get('latest_data') is not None and 'test_single_fcsequence_counter_100-None-fc_sequence0-eTx-0-errcnt' in doc['latest_data'].keys() else None for doc in documents
-        ])
         # Loop over each field in the query_map
         for field_key, field_value in query_map.items():
             # Extract the relevant field from the documents (handling None and missing keys)
@@ -548,9 +601,9 @@ class Database:
                 doc['latest_data'].get(field_key, None) if doc.get('latest_data') else None
                 for doc in documents
             ])
-
+    
         return result_dict
-    def retrieveTestAlgorithmInfo(self, lowerLim=None, upperLim=None, perDay=None, econType = 'ECONT'):
+    def retrieveTestAlgorithmInfo(self, lowerLim=None, upperLim=None, timeEnd=None, timePeriod='day'):
         voltage_field_map = {
             'None': {
                         'test_algorithm_compression_emu___econt_testvectors_counterPatternInTC_RPT_-errcnt': 'test_info.test_algorithm_compression_emu___econt_testvectors_counterPatternInTC_RPT_.metadata.sc_err_count',
@@ -615,8 +668,8 @@ class Database:
             },
         }
         query_map = voltage_field_map['None']
-        pipeline = constructQueryPipeline(query_map, econType=econType, lowerLim=lowerLim, upperLim=upperLim, perDay=perDay)
-        cursor = self.db['testPacketsInfo'].aggregate(pipeline)
+        pipeline = constructQueryPipeline(query_map, lowerLim=lowerLim, upperLim=upperLim, timeEnd=timeEnd, timePeriod=timePeriod)
+        cursor = self.db['testAlgorithmInfo'].aggregate(pipeline)
         documents = list(cursor)
         # Initialize a dictionary to hold results dynamically
         result_dict = {}
@@ -630,7 +683,7 @@ class Database:
 
         return result_dict
         
-    def retrieveTestMuxInfo(self, lowerLim=None, upperLim=None, perDay=None, econType = 'ECONT'):
+    def retrieveTestMuxInfo(self, lowerLim=None, upperLim=None, timeEnd=None, timePeriod='day'):
         voltage_field_map = {
             'None': {
                 'test_mux-errcnt': 'test_info.test_mux.metadata.error_counts',
@@ -643,7 +696,7 @@ class Database:
             },
         }
         query_map = voltage_field_map['None']
-        pipeline = constructQueryPipeline(query_map, econType=econType, lowerLim=lowerLim, upperLim=upperLim, perDay=perDay)
+        pipeline = constructQueryPipeline(query_map, lowerLim=lowerLim, upperLim=upperLim, timeEnd=timeEnd, timePeriod=timePeriod)
         cursor = self.db['testMuxCalibInfo'].aggregate(pipeline)
         documents = list(cursor)
         # Initialize a dictionary to hold results dynamically
@@ -658,7 +711,7 @@ class Database:
 
         return result_dict
         
-    def retrieveI2Cerrcnts(self, lowerLim=None, upperLim=None, perDay=None, econType = 'ECOND'):
+    def retrieveI2Cerrcnts(self, lowerLim=None, upperLim=None, timeEnd=None, timePeriod='day'):
         #This function makes a plot of the PLL Capbank Width
         #if the user provides a range it will plot only over that range
         #if not it plots the capbank width over the whole dataset
@@ -679,7 +732,7 @@ class Database:
         }
 
         query_map = voltage_field_map['None']
-        pipeline = constructQueryPipeline(query_map, econType=econType, lowerLim=lowerLim, upperLim=upperLim)
+        pipeline = constructQueryPipeline(query_map, lowerLim=lowerLim, upperLim=upperLim, timeEnd=timeEnd, timePeriod=timePeriod)
         cursor = self.db['testI2CInfo'].aggregate(pipeline)
         documents = list(cursor)
         chipNum = np.array([
@@ -703,7 +756,7 @@ class Database:
         return chipNum, n_read_errors_asic, n_read_errors_emulator, n_write_errors_asic, n_write_errors_emulator
 
 
-    def testStreamComparison(self, econType = 'ECOND', perDay=None, tray_number = None):
+    def testStreamComparison(self, tray_number = None, timeEnd=None, timePeriod='day'):
             #Returns info from the OB error test
             #This returns DAQ_asic, DAQ_emu, DAQ_counter, and word_err_cnt
             #This is done for the voltages 0.99, 1.03, and 1.08
@@ -727,7 +780,7 @@ class Database:
             }
 
             query_map = voltage_field_map['None']
-            pipeline = constructQueryPipeline(query_map, econType=econType, perDay=perDay)
+            pipeline = constructQueryPipeline(query_map, timeEnd=timeEnd, timePeriod=timePeriod)
             cursor = self.db['testOBError'].aggregate(pipeline)
             documents = list(cursor)
 
@@ -768,7 +821,7 @@ class Database:
 
 
 
-    def getBISTInfoFull(self, lowerLim=None, upperLim=None, econType='ECOND', perDay=None, tray_number = None):
+    def getBISTInfoFull(self, lowerLim=None, upperLim=None, tray_number = None, timeEnd=None, timePeriod='day'):
             #This function makes a plot of the PLL Capbank Width
             #if the user provides a range it will plot only over that range
             #if not it plots the capbank width over the whole dataset
@@ -785,7 +838,7 @@ class Database:
             }
 
             query_map = voltage_field_map['None']
-            pipeline = constructQueryPipeline(query_map, econType=econType, lowerLim = lowerLim, upperLim=upperLim, perDay=perDay)
+            pipeline = constructQueryPipeline(query_map, lowerLim = lowerLim, upperLim=upperLim, timeEnd=timeEnd, timePeriod=timePeriod)
             cursor = self.db['testBistInfo'].aggregate(pipeline)
             documents = list(cursor)
 
@@ -803,7 +856,7 @@ class Database:
 
             return voltages, bist_results, chipNum
 
-    def getVoltageAndCurrentCSV(self, lowerLim=None, upperLim=None, perDay=None, econType = 'ECOND'):
+    def getVoltageAndCurrentCSV(self, lowerLim=None, upperLim=None, timeEnd=None, timePeriod='day'):
         #This function makes a plot of the PLL Capbank Width
         #if the user provides a range it will plot only over that range
         #if not it plots the capbank width over the whole dataset
@@ -827,7 +880,7 @@ class Database:
         }
 
         query_map = voltage_field_map['None']
-        pipeline = constructQueryPipeline(query_map, econType=econType, lowerLim = lowerLim, upperLim=upperLim, perDay=perDay)
+        pipeline = constructQueryPipeline(query_map, lowerLim = lowerLim, upperLim=upperLim, timeEnd=timeEnd, timePeriod=timePeriod)
         cursor = self.db['testPowerInfo'].aggregate(pipeline)
         documents = list(cursor)
         #main measurements
@@ -863,7 +916,7 @@ class Database:
         ])
         return current, voltage, current_during_hardreset, current_after_hardreset, current_during_softreset, current_after_softreset, current_runbit_set, temperature, chipNum
 
-    def getFirstFailureCSV(self, lowerLim=None, upperLim=None, econType='ECOND', perDay=None, tray_number = None):
+    def getFirstFailureCSV(self, lowerLim=None, upperLim=None, tray_number = None, timeEnd=None, timePeriod='day'):
         #This function makes a plot of the PLL Capbank Width
         #if the user provides a range it will plot only over that range
         #if not it plots the capbank width over the whole dataset
@@ -879,7 +932,7 @@ class Database:
         }
 
         query_map = voltage_field_map['None']
-        pipeline = constructQueryPipeline(query_map, econType=econType, lowerLim = lowerLim, upperLim=upperLim, perDay=perDay)
+        pipeline = constructQueryPipeline(query_map, lowerLim = lowerLim, upperLim=upperLim, timeEnd=timeEnd, timePeriod=timePeriod)
         cursor = self.db['testBistInfo'].aggregate(pipeline)
         documents = list(cursor)
 
@@ -896,7 +949,7 @@ class Database:
         return first_failure, chipNum
 
 
-    def testIoCSV(self, lowerLim=None, upperLim=None, perDay=None, voltage = 'None', econType = 'ECOND'):
+    def testIoCSV(self, lowerLim=None, upperLim=None, voltage = 'None', timeEnd=None, timePeriod='day'):
         #This function makes a plot of the eTX Delay scan Max Width
         #if the user provides a range it will plot only over that range
         #if not it plots the capbank width over the whole dataset
@@ -916,7 +969,7 @@ class Database:
         if voltage not in voltage_field_map:
             raise ValueError("Invalid voltage specified. Choose from '1p08', '1p2', '1p32'.")
         query_map = voltage_field_map[voltage]
-        pipeline = constructQueryPipeline(query_map, econType=econType, lowerLim = lowerLim, upperLim=upperLim)
+        pipeline = constructQueryPipeline(query_map, lowerLim = lowerLim, upperLim=upperLim, timeEnd=timeEnd, timePeriod=timePeriod)
         cursor = self.db['testIOInfo'].aggregate(pipeline)
         documents = list(cursor)
         delayscan_maxwidth_1p08 = ([
@@ -944,7 +997,7 @@ class Database:
             ])
         return delayscan_maxwidth_1p08, delayscan_maxwidth_1p2, delayscan_maxwidth_1p32, phasescan_maxwidth_1p08, phasescan_maxwidth_1p2, phasescan_maxwidth_1p32, chipNum
 
-    def testPllCSV(self, lowerLim=None, upperLim=None, voltage = 'None', econType = 'ECOND'):
+    def testPllCSV(self, lowerLim=None, upperLim=None, voltage = 'None', timeEnd=None, timePeriod='day'):
         #This function makes a plot of the PLL Capbank Width
         #if the user provides a range it will plot only over that range
         #if not it plots the capbank width over the whole dataset
@@ -968,7 +1021,7 @@ class Database:
         if voltage not in voltage_field_map:
             raise ValueError("Invalid voltage specified. Choose from '1p08', '1p2', '1p32'.")
         query_map = voltage_field_map[voltage]
-        pipeline = constructQueryPipeline(query_map, econType=econType, lowerLim = lowerLim, upperLim=upperLim)
+        pipeline = constructQueryPipeline(query_map, lowerLim = lowerLim, upperLim=upperLim, timeEnd=timeEnd, timePeriod=timePeriod)
         cursor = self.db['testPLLInfo'].aggregate(pipeline)
         documents = list(cursor)
         chipNum = ([
@@ -1007,7 +1060,7 @@ class Database:
          ########################################################################################################################
         return chipNum, capbankwidth_1p08, capbankwidth_1p2, capbankwidth_1p32, minFreq_1p08, minFreq_1p2, minFreq_1p32, maxFreq_1p08, maxFreq_1p2, maxFreq_1p32
 
-    def minMaxFrequencyPlot(self, lowerLim=None, upperLim=None, perDay=None, voltage = 'None', econType = 'ECOND'):
+    def minMaxFrequencyPlot(self, lowerLim=None, upperLim=None, voltage = 'None', timeEnd=None, timePeriod='day'):
         #This function makes a plot of the PLL Capbank Width
         #if the user provides a range it will plot only over that range
         #if not it plots the capbank width over the whole dataset
@@ -1027,7 +1080,7 @@ class Database:
         if voltage not in voltage_field_map:
             raise ValueError("Invalid voltage specified. Choose from '1p08', '1p2', '1p32'.")
         query_map = voltage_field_map[voltage]
-        pipeline = constructQueryPipeline(query_map, econType=econType, lowerLim = lowerLim, upperLim=upperLim, perDay=perDay)
+        pipeline = constructQueryPipeline(query_map, lowerLim = lowerLim, upperLim=upperLim, timeEnd=timeEnd, timePeriod=timePeriod)
         cursor = self.db['testPLLInfo'].aggregate(pipeline)
         documents = list(cursor)
 
