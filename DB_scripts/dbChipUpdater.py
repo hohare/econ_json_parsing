@@ -81,3 +81,23 @@ for collection_name in db.list_collection_names():
 
 total_duration = time.time() - start_time_total
 print(f"\nAll collections updated in {timedelta(seconds=int(total_duration))}")
+
+
+print("\nRunning post-update validation check...")
+
+invalid_count_total = 0
+
+for collection_name in db.list_collection_names():
+    collection = db[collection_name]
+    invalid_count = collection.count_documents({
+        "chip_number": {"$gte": 0, "$lte": 9999}
+    })
+    print(f"{collection_name}: {invalid_count} documents still in range [0–9999]")
+
+    invalid_count_total += invalid_count
+
+assert invalid_count_total == 0, (
+    f"Assertion failed: {invalid_count_total} documents still have chip_number in [0–9999]!"
+)
+
+print("\nValidation passed: All chip numbers successfully updated.")
