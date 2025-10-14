@@ -1,0 +1,663 @@
+Chip Number,Status,,Last Update,,Total,214,
+1,Packaged PCB for SEU,,,,Prototype Partial CM,12,
+2,Packaged PCB for SEU,,,,Failed Test,29,0.8644859813
+101,Prototype Partial CM,,"Given to Paul, June 20",,Baylor,2,
+102,Prototype Partial CM,,"Given to Paul, June 20",,Pass,1,
+103,Prototype Partial CM,,"Given to Paul, June 20",,Preseries CM batch 1,60,
+104,Prototype Partial CM,,"Given to Paul, June 20",,Preseries CM batch 2,90,
+105,Prototype Partial CM,,"Given to Paul, June 20",,FSU,20,
+106,Prototype Partial CM,,"Given to Paul, June 20",,,,
+107,Prototype Partial CM,,"Given to Paul, June 20",,,,
+108,Prototype Partial CM,,"Given to Paul, June 20",,,,
+109,Prototype Partial CM,,"Given to Paul, June 20",,,,
+110,Prototype Partial CM,,"Given to Paul, June 20",,,,
+111,Failed Test,Bent Pins,Moved to failure tray,,,,
+112,Prototype Partial CM,,"Given to Paul, June 20",,,,
+113,Prototype Partial CM,,"Given to Paul, June 20",,,,
+114,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+115,Failed Test,Buffer,Moved to failure tray,,,,
+116,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+117,Baylor,,"Danny gave to Jon, June 25",,,,
+118,Baylor,,"Danny gave to Jon, June 25",,,,
+119,Preseries CM batch 1,,"Given to Paul, June 20",,,,
+120,Preseries CM batch 1,,"Given to Paul, June 20",,,,
+121,Preseries CM batch 1,,"Given to Paul, June 20",,,,
+122,Preseries CM batch 1,,"Given to Paul, June 20",,,,
+123,Preseries CM batch 1,,"Given to Paul, June 20",,,,
+124,Preseries CM batch 1,,"Given to Paul, June 20",,,,
+125,Preseries CM batch 1,,"Given to Paul, June 20",,,,
+126,Preseries CM batch 1,,"Given to Paul, June 20",,,,
+127,Preseries CM batch 1,,"Given to Paul, June 20",,,,
+128,Preseries CM batch 1,,"Given to Paul, June 20",,,,
+129,Preseries CM batch 1,,"Given to Paul, June 20",,,,
+130,Preseries CM batch 1,,"Given to Paul, June 20",,,,
+131,Preseries CM batch 1,,"Given to Paul, June 20",,,,
+132,Preseries CM batch 1,,"Given to Paul, June 20",,,,
+133,Preseries CM batch 1,,"Given to Paul, June 20",,,,
+134,Failed Test,BIST,Moved to failure tray,,,,
+135,Preseries CM batch 1,,"Given to Paul, June 20",,,,
+136,Preseries CM batch 1,,"Given to Paul, June 20",,,,
+137,Preseries CM batch 1,,"Given to Paul, June 20",,,,
+138,Preseries CM batch 1,,"Given to Paul, June 20",,,,
+139,Preseries CM batch 1,,"Given to Paul, June 20",,,,
+140,Preseries CM batch 1,,"Given to Paul, June 20",,,,
+141,Preseries CM batch 1,,"Given to Paul, June 20",,,,
+142,Preseries CM batch 1,,"Given to Paul, June 20",,,,
+143,Preseries CM batch 1,,"Given to Paul, June 20",,,,
+144,Failed Test,BIST,Moved to failure tray,,,,
+145,Failed Test,BIST,Moved to failure tray,,,,
+146,Preseries CM batch 1,,"Given to Paul, June 20",,,,
+147,Preseries CM batch 1,,"Given to Paul, June 20",,,,
+148,Preseries CM batch 1,,"Given to Paul, June 20",,,,
+149,Preseries CM batch 1,,"Given to Paul, June 20",,,,
+150,Failed Test,BIST,Moved to failure tray,,,,
+151,Failed Test,BIST,Moved to failure tray,,,,
+152,Preseries CM batch 1,,"Given to Paul, June 20",,,,
+153,Preseries CM batch 1,,"Given to Paul, June 20",,,,
+154,Preseries CM batch 1,,"Given to Paul, June 20",,,,
+155,Preseries CM batch 1,,"Given to Paul, June 20",,,,
+156,Preseries CM batch 1,,"Given to Paul, June 20",,,,
+157,Failed Test,"BIST, Packets",Moved to failure tray,,,,
+158,Preseries CM batch 1,,"Given to Paul, June 20",,,,
+159,Preseries CM batch 1,,"Given to Paul, June 20",,,,
+160,Preseries CM batch 1,,"Given to Paul, June 20",,,,
+161,Preseries CM batch 1,,"Given to Paul, June 20",,,,
+162,Preseries CM batch 1,,"Given to Paul, June 20",,,,
+163,Preseries CM batch 1,,"Given to Paul, June 20",,,,
+164,Preseries CM batch 1,,"Given to Paul, June 20",,,,
+165,Failed Test,Packets,Moved to failure tray,,,,
+166,Preseries CM batch 1,,"Given to Paul, June 20",,,,
+167,Failed Test,Buffer,Moved to failure tray,,,,
+168,Preseries CM batch 1,,"Given to Paul, June 20",,,,
+169,Failed Test,BIST,Moved to failure tray,,,,
+170,Preseries CM batch 1,,"Given to Paul, June 20",,,,
+171,Preseries CM batch 1,,"Given to Paul, June 20",,,,
+172,Failed Test,BIST,Moved to failure tray,,,,
+173,Preseries CM batch 1,,"Given to Paul, June 20",,,,
+174,Preseries CM batch 1,,"Given to Paul, June 20",,,,
+175,Preseries CM batch 1,,"Given to Paul, June 20",,,,
+176,Preseries CM batch 1,,"Given to Paul, June 20",,,,
+177,Preseries CM batch 1,,"Given to Paul, June 20",,,,
+178,Preseries CM batch 1,,"Given to Paul, June 20",,,,
+179,Preseries CM batch 1,,"Given to Paul, June 20",,,,
+180,Preseries CM batch 1,,"Given to Paul, June 20",,,,
+181,Preseries CM batch 1,,"Given to Paul, June 20",,,,
+182,Preseries CM batch 1,,"Given to Paul, June 20",,,,
+183,Preseries CM batch 1,,"Given to Paul, June 20",,,,
+184,Preseries CM batch 1,,"Given to Paul, June 20",,,,
+185,Failed Test,BIST,Moved to failure tray,,,,
+186,Preseries CM batch 1,,"Given to Paul, June 20",,,,
+187,Failed Test,BIST,Moved to failure tray,,,,
+188,Preseries CM batch 1,,"Given to Paul, June 20",,,,
+189,Preseries CM batch 1,,"Given to Paul, June 20",,,,
+190,Preseries CM batch 1,,"Given to Paul, June 20",,,,
+201,Failed Test,BIST,,,,,
+202,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+203,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+204,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+205,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+206,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+207,Failed Test,BIST,,,,,
+208,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+209,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+210,Failed Test,BIST,,,,,
+211,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+212,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+213,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+214,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+215,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+216,Bent Pins?,,,,,,
+217,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+218,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+219,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+220,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+221,Failed Test,Fill Buffer,,,,,
+222,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+223,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+224,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+225,Failed Test,BIST,,,,,
+226,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+227,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+228,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+229,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+230,Failed Test,Fill Buffer,,,,,
+231,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+232,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+233,Failed Test,BIST,,,,,
+234,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+235,Failed Test,Fill Buffer,,,,,
+236,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+237,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+238,Failed Test,Fill Buffer,,,,,
+239,Failed Test,Fill Buffer,,,,,
+240,Failed Test,Fill Buffer,,,,,
+241,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+242,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+243,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+244,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+245,Failed Test,Fill Buffer,,,,,
+246,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+247,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+248,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+249,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+250,Failed Test,Packets,,,,,
+251,Failed Test,Packets,,,,,
+252,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+253,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+254,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+255,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+256,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+257,Failed Test,All,,,,,
+258,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+259,Not Yet Tested,,,,,,
+260,Not Yet Tested,,,,,,
+261,Not Yet Tested,,,,,,
+262,Not Yet Tested,,,,,,
+263,Not Yet Tested,,,,,,
+264,Not Yet Tested,,,,,,
+265,Not Yet Tested,,,,,,
+266,Not Yet Tested,,,,,,
+267,Not Yet Tested,,,,,,
+268,Not Yet Tested,,,,,,
+269,Not Yet Tested,,,,,,
+270,Not Yet Tested,,,,,,
+271,Not Yet Tested,,,,,,
+272,Not Yet Tested,,,,,,
+273,Not Yet Tested,,,,,,
+274,Not Yet Tested,,,,,,
+275,Not Yet Tested,,,,,,
+276,Not Yet Tested,,,,,,
+277,Not Yet Tested,,,,,,
+278,Not Yet Tested,,,,,,
+279,Not Yet Tested,,,,,,
+280,Not Yet Tested,,,,,,
+281,Not Yet Tested,,,,,,
+282,Not Yet Tested,,,,,,
+283,Not Yet Tested,,,,,,
+284,Not Yet Tested,,,,,,
+285,Not Yet Tested,,,,,,
+286,Not Yet Tested,,,,,,
+287,Not Yet Tested,,,,,,
+288,Not Yet Tested,,,,,,
+289,Not Yet Tested,,,,,,
+290,Not Yet Tested,,,,,,
+301,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+302,Test Failed,,,,,,
+303,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+304,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+305,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+306,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+307,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+308,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+309,Test Failed,Packets,,,,,
+310,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+311,Test Failed,BIST,,,,,
+312,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+313,Test Failed,BIST,,,,,
+314,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+315,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+316,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+317,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+318,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+319,Test Failed,All,,,,,
+320,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+321,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+322,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+323,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+324,Test Failed,,,,,,
+325,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+326,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+327,Test Failed,,,,,,
+328,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+329,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+330,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+331,Test Failed,,,,,,
+332,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+333,Test Failed,,,,,,
+334,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+335,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+336,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+337,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+338,Test Failed,All,,,,,
+339,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+340,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+341,Test Failed,All,,,,,
+342,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+343,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+344,Test Failed,Buffer,,,,,
+345,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+346,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+347,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+348,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+349,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+350,Test Failed ,All,,,,,
+351,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+352,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+353,Test Failed,Buffer,,,,,
+354,Test Failed,Buffer,,,,,
+355,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+356,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+357,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+358,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+359,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+360,Test Failed,BIST,,,,,
+361,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+362,Preseries CM batch 2,,"Given to Paul, June 27",,,,
+363,FSU,,,,,,
+364,FSU,,,,,,
+365,FSU,,,,,,
+366,FSU,,,,,,
+367,Test Failed,BIST,,,,,
+368,FSU,,,,,,
+369,FSU,,,,,,
+370,FSU,,,,,,
+371,FSU,,,,,,
+372,Test Failed,BIST,,,,,
+373,FSU,,,,,,
+374,FSU,,,,,,
+375,FSU,,,,,,
+376,FSU,,,,,,
+377,FSU,,,,,,
+378,Test Failed,Packets,,,,,
+379,FSU,,,,,,
+380,FSU,,,,,,
+381,FSU,,,,,,
+382,Test Failed,Packets,,,,,
+383,FSU,,,,,,
+384,Test Failed,All,,,,,
+385,FSU,,,,,,
+386,FSU,,,,,,
+387,Test Failed,Packets,,,,,
+388,FSU,,,,,,
+389,Test Failed,BIST,,,,,
+390,Pass,,,,,,
+401,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2], assert 13 >= 14","Shipped to Minnesota, Aug 8",,,,
+402,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2], assert 13 >= 14
+test_bist_threshold.py::test_bist, voltage 1.01 failed",,,,,
+403,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.32], assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2], assert 13 >= 14
+test_bist_threshold.py::test_bist, AssertionError: voltage 1.04 failed",,,,,
+404,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2], assert 13 >= 14","Shipped to Minnesota, Aug 8",,,,
+405,QC and Bist Coverage,Bent Pins,,,,,
+406,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 12 >= 14
+test_pll.py::test_pll_capbank_width[1.32], assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2], assert 13 >= 14
+test_bist_threshold.py::test_bist, voltage 1.08 failed",,,,,
+407,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2], assert 13 >= 14","Shipped to Minnesota, Aug 8",,,,
+408,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 12 >= 14
+test_pll.py::test_pll_capbank_width[1.32], assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2], assert 13 >= 14
+test_bist_threshold.py::test_bist, voltage 1.11 failed
+test_zs.py::test_zs_zsm1_sampling, Non-zero error counts observed",,,,,
+409,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 12 >= 14
+test_pll.py::test_pll_capbank_width[1.32], assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2], assert 13 >= 14","Shipped to Minnesota, Aug 8",,,,
+410,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 12 >= 14","Shipped to Minnesota, Aug 8",,,,
+411,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14
+test_bist_threshold.py::test_bist, voltage 1.14 failed",,,,,
+412,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 12 >= 14
+test_pll.py::test_pll_capbank_width[1.32], assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2], assert 13 >= 14
+test_bist_threshold.py::test_bist, voltage 1.01 failed",,,,,
+413,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14
+test_power.py::test_currentdraw_1p2V, assert 0.2396739 > 0.24",,,,,
+414,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08]        assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.32]        assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2]        assert 13 >= 14
+test_packets.py::test_fill_buffer, AssertionError: 3.0454843081421025e-05",,,,,
+415,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 12 >= 14
+test_bist_threshold.py::test_bist - AssertionError: voltage 1.05 failed",,,,,
+416,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 12 >= 14","Shipped to Minnesota, Aug 8",,,,
+417,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 12 >= 14","Shipped to Minnesota, Aug 8",,,,
+418,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 12 >= 14","Shipped to Minnesota, Aug 8",,,,
+419,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2], assert 13 >= 14","Shipped to Minnesota, Aug 8",,,,
+420,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14","Shipped to Minnesota, Aug 8",,,,
+421,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 12 >= 14
+test_pll.py::test_pll_capbank_width[1.32], assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2], assert 13 >= 14
+test_packets.py::test_fill_buffer, AssertionError",,,,,
+422,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2], assert 13 >= 14","Shipped to Minnesota, Aug 8",,,,
+423,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 12 >= 14
+test_pll.py::test_pll_capbank_width[1.32], assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2], assert 13 >= 14","Shipped to Minnesota, Aug 8",,,,
+424,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 12 >= 14
+test_pll.py::test_pll_capbank_width[1.32], assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2], assert 13 >= 14
+test_bist_threshold.py::test_bist, AssertionError: voltage 1.1 failed",,,,,
+425,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.32], assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2], assert 13 >= 14
+test_bist_threshold.py::test_bist, AssertionError: voltage 1.03 failed",,,,,
+426,QC and Bist Coverage,"test_power.py::test_currentdraw_1p2V, assert 0.239974 > 0.24",,,,,
+427,QC and Bist Coverage,ALL PASS,"Shipped to Minnesota, Aug 8",,,,
+428,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 12 >= 14
+test_pll.py::test_pll_capbank_width[1.2], assert 12 >= 14","Shipped to Minnesota, Aug 8",,,,
+429,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 12 >= 14
+test_pll.py::test_pll_capbank_width[1.32], assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2], assert 13 >= 14
+test_packets.py::test_fill_buffer, AssertionError",,,,,
+430,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 12 >= 14
+test_bist_threshold.py::test_bist, AssertionError: voltage 1.1 failed",,,,,
+431,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.32], assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2], assert 13 >= 14
+test_packets.py::test_fill_buffer, AssertionError",,,,,
+432,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 12 >= 14
+test_pll.py::test_pll_capbank_width[1.32], assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2], assert 13 >= 14
+test_packets.py::test_fill_buffer, AssertionError",,,,,
+433,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 12 >= 14
+test_pll.py::test_pll_capbank_width[1.2], assert 13 >= 14","Shipped to Minnesota, Aug 8",,,,
+434,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2], assert 13 >= 14
+test_bist_threshold.py::test_bist, AssertionError: voltage 1.01 failed",,,,,
+435,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 12 >= 14
+test_pll.py::test_pll_capbank_width[1.2], assert 13 >= 14
+test_bist_threshold.py::test_bist, AssertionError: voltage 1.02 failed",,,,,
+436,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 12 >= 14
+test_pll.py::test_pll_capbank_width[1.32], assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2], assert 13 >= 14
+test_bist_threshold.py::test_bist, AssertionError: voltage 1.1 failed",,,,,
+437,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2], assert 13 >= 14","Shipped to Minnesota, Aug 8",,,,
+438,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 12 >= 14","Shipped to Minnesota, Aug 8",,,,
+439,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14
+test_bist_threshold.py::test_bist, AssertionError: voltage 1.04 failed",,,,,
+440,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2], assert 13 >= 14
+test_bist_threshold.py::test_bist, AssertionError: voltage 1.03 failed
+test_packets.py::test_fill_buffer, AssertionError",,,,,
+441,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 12 >= 14","Shipped to Minnesota, Aug 8",,,,
+442,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2], assert 13 >= 14","Shipped to Minnesota, Aug 8",,,,
+443,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 12 >= 14","Shipped to Minnesota, Aug 8",,,,
+444,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.32], assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2], assert 13 >= 14","Shipped to Minnesota, Aug 8",,,,
+445,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14
+test_bist_threshold.py::test_bist, AssertionError: voltage 1.02 failed",,,,,
+446,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 12 >= 14
+test_bist_threshold.py::test_bist, AssertionError: voltage 1.03 failed",,,,,
+447,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14","Shipped to Minnesota, Aug 8",,,,
+448,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.32], assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2], assert 13 >= 14","Shipped to Minnesota, Aug 8",,,,
+449,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 12 >= 14
+test_packets.py::test_fill_buffer, AssertionError",,,,,
+450,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2], assert 13 >= 14","Shipped to Minnesota, Aug 8",,,,
+451,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 12 >= 14","Shipped to Minnesota, Aug 8",,,,
+452,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 12 >= 14
+test_bist_threshold.py::test_bist, AssertionError: voltage 1.08 failed
+test_packets.py::test_fill_buffer, AssertionError",,,,,
+453,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14
+test_bist_threshold.py::test_bist, AssertionError: voltage 1.09 failed",,,,,
+454,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14
+test_bist_threshold.py::test_bist, AssertionError: voltage 1.03 failed",,,,,
+455,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2], assert 13 >= 14
+test_bist_threshold.py::test_bist, AssertionError: voltage 1.08 failed",,,,,
+456,QC and Bist Coverage,"test_packets.py::test_single_fcsequence[None-../econd_testvectors/exampleData/testVectorInputs_Random.csv-fc_sequence9-ZS_37]        , AssertionError: 1.527067267313125e-05
+assert 1 == 0",,,,,
+457,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14","Shipped to Minnesota, Aug 8",,,,
+458,NO TEST,Current Reading 0.6 A before starting the tests,,,,,
+459,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2], assert 13 >= 14","Shipped to Minnesota, Aug 8",,,,
+460,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14","Shipped to Minnesota, Aug 8",,,,
+461,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 12 >= 14","Shipped to Minnesota, Aug 8",,,,
+462,QC and Bist Coverage,ALL PASS,,,,,
+463,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2], assert 13 >= 14
+test_bist_threshold.py::test_bist, AssertionError: voltage 1.08 failed",,,,,
+464,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2], assert 13 >= 14
+test_bist_threshold.py::test_bist, AssertionError: voltage 1.05 failed",,,,,
+465,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2], assert 13 >= 14
+test_packets.py::test_single_fcsequence[None-../econd_testvectors/exampleData/testVectorInputs_Random.csv-fc_sequence9-ZS_37]        , AssertionError: 1.5252505223983039e-05
+test_packets.py::test_fill_buffer, AssertionError: 1.529683508482095e-05",,,,,
+466,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2], assert 13 >= 14","Shipped to Minnesota, Aug 8",,,,
+467,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14","Shipped to Minnesota, Aug 8",,,,
+468,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14","Shipped to Minnesota, Aug 8",,,,
+469,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2], assert 13 >= 14
+test_bist_threshold.py::test_bist, AssertionError: voltage 1.1 failed
+test_packets.py::test_fill_buffer, AssertionError",,,,,
+470,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2], assert 13 >= 14
+test_bist_threshold.py::test_bist, AssertionError: voltage 1.06 failed
+test_packets.py::test_fill_buffer, AssertionError",,,,,
+471,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.2], assert 13 >= 14","Shipped to Minnesota, Aug 8",,,,
+472,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2], assert 13 >= 14","Shipped to Minnesota, Aug 8",,,,
+473,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 12 >= 14
+test_bist_threshold.py::test_bist, AssertionError: voltage 1.03 failed",,,,,
+474,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.32], assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2], assert 13 >= 14","Shipped to Minnesota, Aug 8",,,,
+475,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 12 >= 14
+test_bist_threshold.py::test_bist, AssertionError: voltage 1.13 failed",,,,,
+476,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2], assert 13 >= 14
+test_bist_threshold.py::test_bist, AssertionError: voltage 1.03 failed",,,,,
+477,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2], assert 13 >= 14","Shipped to Minnesota, Aug 8",,,,
+478,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14","Shipped to Minnesota, Aug 8",,,,
+479,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 12 >= 14","Shipped to Minnesota, Aug 8",,,,
+480,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 12 >= 14","Shipped to Minnesota, Aug 8",,,,
+481,QC and Bist Coverage,ALL PASS,"Shipped to Minnesota, Aug 8",,,,
+482,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2], assert 13 >= 14",,,,,
+483,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14",,,,,
+484,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14",,,,,
+485,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 12 >= 14
+test_bist_threshold.py::test_bist, AssertionError: voltage 1.03 failed
+test_packets.py::test_fill_buffer, AssertionError",,,,,
+486,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.32], assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2], assert 13 >= 14",,,,,
+487,QC and Bist Coverage,"test_bist_threshold.py::test_bist, AssertionError: voltage 1.1 failed",,,,,
+488,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14",,,,,
+489,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2], assert 13 >= 14",,,,,
+490,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14
+test_bist_threshold.py::test_bist, AssertionError: voltage 1.03 failed",,,,,
+501,QC and Bist Coverage,"test_power.py::test_currentdraw_1p2V, assert 0.2395239 > 0.24",,,,,
+502,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 12 >= 14",,,,,
+503,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.32], assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2], assert 13 >= 14",,,,,
+504,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14
+test_power.py::test_currentdraw_1p2V, assert 0.2396876 > 0.24",,,,,
+505,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14",,,,,
+506,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14
+test_power.py::test_currentdraw_1p2V, assert 0.2393398 > 0.24
+test_bist_threshold.py::test_bist, AssertionError: voltage 1.06 failed",,,,,
+507,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14",,,,,
+508,QC and Bist Coverage,ALL PASS,,,,,
+509,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.32], assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2], assert 13 >= 14
+test_bist_threshold.py::test_bist, AssertionError: voltage 1.06 failed",,,,,
+510,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 12 >= 14
+test_bist_threshold.py::test_bist, AssertionError: voltage 1.1 failed",,,,,
+511,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.32], assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2], assert 13 >= 14",,,,,
+512,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.2], assert 13 >= 14
+test_power.py::test_currentdraw_1p2V, assert 0.2391489 > 0.24",,,,,
+513,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14",,,,,
+514,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.2], assert 13 >= 14",,,,,
+515,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2], assert 13 >= 14
+test_bist_threshold.py::test_bist, AssertionError: voltage 1.14 failed",,,,,
+516,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2], assert 13 >= 14
+test_bist_threshold.py::test_bist, AssertionError: voltage 1.12 failed
+test_packets.py::test_fill_buffer, AssertionError",,,,,
+517,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14
+test_bist_threshold.py::test_bist, AssertionError: voltage 1.09 failed",,,,,
+518,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.2], assert 13 >= 14
+test_power.py::test_currentdraw_1p2V, assert 0.2387533 > 0.24",,,,,
+519,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2], assert 13 >= 14
+test_bist_threshold.py::test_bist, AssertionError: voltage 1.09 failed",,,,,
+520,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2], assert 13 >= 14",,,,,
+521,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 12 >= 14
+test_pll.py::test_pll_capbank_width[1.2], assert 13 >= 14",,,,,
+522,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 12 >= 14",,,,,
+523,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14",,,,,
+524,QC and Bist Coverage,ALL PASS,,,,,
+525,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2], assert 13 >= 14
+test_bist_threshold.py::test_bist, AssertionError: voltage 1.02 failed",,,,,
+526,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14
+test_packets.py::test_fill_buffer, AssertionError",,,,,
+527,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.32], assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2], assert 13 >= 14",,,,,
+528,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.32], assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2], assert 13 >= 14
+test_bist_threshold.py::test_bist, AssertionError: voltage 1.02 failed",,,,,
+529,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14",,,,,
+530,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.2], assert 13 >= 14
+test_bist_threshold.py::test_bist, AssertionError: voltage 1.05 failed",,,,,
+531,QC and Bist Coverage,ALL PASS,,,,,
+532,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14",,,,,
+533,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2], assert 13 >= 14",,,,,
+534,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.32], assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2], assert 13 >= 14",,,,,
+535,QC and Bist Coverage,FAILED 17 Tests,,,,,
+536,QC and Bist Coverage,FaileD 30 Tests,,,,,
+537,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14
+test_power.py::test_currentdraw_1p2V, assert 0.2392853 > 0.24
+test_bist_threshold.py::test_bist, AssertionError: voltage 1.01 failed",,,,,
+538,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14
+test_bist_threshold.py::test_bist, AssertionError: voltage 1.07 failed",,,,,
+539,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2], assert 13 >= 14",,,,,
+540,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 12 >= 14
+test_pll.py::test_pll_capbank_width[1.2], assert 12 >= 14
+test_bist_threshold.py::test_bist, AssertionError: voltage 1.12 failed
+test_zs.py::test_zs_zsm1_sampling, AssertionError: Non-zero error counts observed
+test_packets.py::test_single_fcsequence[None-../econd_testvectors/exampleData/testVectorInputs_Random.csv-fc_sequence9-ZS_37]        
+test_packets.py::test_fill_buffer",,,,,
+541,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 13 >= 14",,,,,
+542,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08], assert 12 >= 14",,,,,
+543,QC and Bist Coverage,test_currentdraw_1p2V - assert 0.2387056 > 0.24,,,,,
+544,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08] - assert 13 >= 14
+test_bist_threshold.py::test_bist - AssertionError: voltage 1.08 failed",,,,,
+545,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08] - assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2] - assert 13 >= 14",,,,,
+546,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08] - assert 12 >= 14
+test_pll.py::test_pll_capbank_width[1.2] - assert 13 >= 14
+test_bist_threshold.py::test_bist - AssertionError: voltage 1.06 failed",,,,,
+547,QC and Bist Coverage,test_pll.py::test_pll_capbank_width[1.08] - assert 13 >= 14,,,,,
+548,QC and Bist Coverage,ALL PASS,,,,,
+549,QC and Bist Coverage,test_pll.py::test_pll_capbank_width[1.08] - assert 13 >= 14,,,,,
+550,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08] - assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.32] - assert 13 >= 14
+test_bist_threshold.py::test_bist - AssertionError: voltage 1.11 failed ",,,,,
+551,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08] - assert 12 >= 14
+test_pll.py::test_pll_capbank_width[1.32] - assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2] - assert 13 >= 14
+test_bist_threshold.py::test_bist - AssertionError: voltage 1.05 failed",,,,,
+552,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08] - assert 12 >= 14
+test_bist_threshold.py::test_bist - AssertionError: voltage 1.01 failed",,,,,
+553,QC and Bist Coverage,test_pll.py::test_pll_capbank_width[1.08] - assert 13 >= 14,,,,,
+554,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08] - assert 13 >= 14
+test_power.py::test_currentdraw_1p2V - assert 0.2398649 > 0.24",,,,,
+555,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08] - assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2] - assert 13 >= 14
+test_bist_threshold.py::test_bist - AssertionError: voltage 1.07 failed",,,,,
+556,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08] - assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2] - assert 13 >= 14
+test_bist_threshold.py::test_bist - AssertionError: voltage 1.04 failed",,,,,
+557,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08] - assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.32] - assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2] - assert 13 >= 14
+test_bist_threshold.py::test_bist - AssertionError: voltage 1.03 failed",,,,,
+558,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08] - assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.32] - assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2] - assert 13 >= 14
+test_bist_threshold.py::test_bist - AssertionError: voltage 1.06 failed",,,,,
+559,QC and Bist Coverage,test_bist_threshold.py::test_bist - AssertionError: voltage 1.04 failed,,,,,
+560,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08] - assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2] - assert 13 >= 14",,,,,
+561,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08] - assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.32] - assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2] - assert 13 >= 14",,,,,
+562,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08] - assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2] - assert 13 >= 14",,,,,
+563,QC and Bist Coverage,test_pll.py::test_pll_capbank_width[1.08] - assert 13 >= 14,,,,,
+564,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08] - assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.32] - assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2] - assert 13 >= 14",,,,,
+565,QC and Bist Coverage,test_pll.py::test_pll_capbank_width[1.08] - assert 13 >= 14,,,,,
+566,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08] - assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2] - assert 13 >= 14
+test_bist_threshold.py::test_bist - AssertionError: voltage 1.02 failed",,,,,
+567,QC and Bist Coverage,test_pll.py::test_pll_capbank_width[1.08] - assert 12 >= 14,,,,,
+568,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08] - assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2] - assert 13 >= 14",,,,,
+569,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08] - assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2] - assert 13 >= 14",,,,,
+570,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08] - assert 13 >= 14
+test_bist_threshold.py::test_bist - AssertionError: voltage 1.01 failed
+test_packets.py::test_single_fcsequence[None-../econd_testvectors/exampleData/testVectorInputs_Random.csv-fc_sequence9-ZS_37] - AssertionError: 1.5310418739952537e-05",,,,,
+571,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08] - assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.32] - assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2] - assert 13 >= 14",,,,,
+572,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08] - assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.32] - assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2] - assert 13 >= 14",,,,,
+573,QC and Bist Coverage,test_pll.py::test_pll_capbank_width[1.08] - assert 12 >= 14,,,,,
+574,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08] - assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.32] - assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2] - assert 13 >= 14
+test_bist_threshold.py::test_bist - AssertionError: voltage 1.03 failed",,,,,
+575,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08] - assert 13 >= 14
+test_bist_threshold.py::test_bist - AssertionError: voltage 1.01 failed",,,,,
+576,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08] - assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2] - assert 13 >= 14
+test_bist_threshold.py::test_bist - AssertionError: voltage 1.04 failed",,,,,
+577,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08] - assert 12 >= 14
+test_pll.py::test_pll_capbank_width[1.32] - assert 13 >= 14
+test_bist_threshold.py::test_bist - AssertionError: voltage 1.09 failed",,,,,
+578,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.2] - assert 13 >= 14
+test_bist_threshold.py::test_bist - AssertionError: voltage 1.03 failed",,,,,
+579,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08] - assert 12 >= 14
+test_bist_threshold.py::test_bist - AssertionError: voltage 1.06 failed",,,,,
+580,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08] - assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.32] - assert 13 >= 14",,,,,
+581,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08] - assert 13 >= 14
+test_bist_threshold.py::test_bist - AssertionError: voltage 1.09 failed",,,,,
+582,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08] - assert 12 >= 14
+test_pll.py::test_pll_capbank_width[1.2] - assert 12 >= 14",,,,,
+583,QC and Bist Coverage,test_pll.py::test_pll_capbank_width[1.08] - assert 12 >= 14,,,,,
+584,QC and Bist Coverage,test_pll.py::test_pll_capbank_width[1.08] - assert 13 >= 14,,,,,
+585,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08] - assert 12 >= 14
+test_bist_threshold.py::test_bist - AssertionError: voltage 1.01 failed",,,,,
+586,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08] - assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2] - assert 13 >= 14",,,,,
+587,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08] - assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2] - assert 13 >= 14",,,,,
+588,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08] - assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.2] - assert 13 >= 14
+test_bist_threshold.py::test_bist - AssertionError: voltage 1.01 failed",,,,,
+589,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08] - assert 13 >= 14
+test_pll.py::test_pll_capbank_width[1.32] - assert 13 >= 14",,,,,
+590,QC and Bist Coverage,"test_pll.py::test_pll_capbank_width[1.08] - assert 12 >= 14
+test_pll.py::test_pll_capbank_width[1.2] - assert 13 >= 14",,,,,

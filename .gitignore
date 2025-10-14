@@ -3,3 +3,6 @@
 *png
 *ipynb
 *json
+DB_scripts/CSV
+log*txt
+__pycache__

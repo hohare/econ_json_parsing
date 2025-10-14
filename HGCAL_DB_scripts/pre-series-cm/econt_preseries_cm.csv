@@ -1,0 +1,471 @@
+Chip Number,Status,Test Result (added Aug 5) ,Last Update,,Total,221,
+1,Packaged PCB for SEU,N/A,,,Prototype Partial CM,12,
+2,Packaged PCB for SEU,N/A,,,Failed Test,10,0.9547511312
+101,Prototype Partial CM,N/A,"Given to Paul, June 20",,Baylor,2,
+102,Prototype Partial CM,N/A,"Given to Paul, June 20",,Pass,7,
+103,Prototype Partial CM,N/A,"Given to Paul, June 20",,Preseries CM,60,
+104,Prototype Partial CM,N/A,"Given to Paul, June 20",,Preseries CM batch 2,90,
+105,Prototype Partial CM,N/A,"Given to Paul, June 20",,FSU,40,
+106,Prototype Partial CM,N/A,"Given to Paul, June 20",,,,
+107,Failed Test,N/A,Moved to Failure Tray,,,,
+108,Prototype Partial CM,N/A,"Given to Paul, June 20",,,,
+109,Prototype Partial CM,N/A,"Given to Paul, June 20",,,,
+110,Prototype Partial CM,N/A,"Given to Paul, June 20",,,,
+111,Prototype Partial CM,N/A,"Given to Paul, June 20",,,,
+112,Failed Test,N/A,Moved to Failure Tray,,,,
+113,Prototype Partial CM,N/A,"Given to Paul, June 20",,,,
+114,Prototype Partial CM,N/A,"Given to Paul, June 20",,,,
+115,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+116,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+117,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+118,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+119,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+120,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+121,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+122,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+123,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+124,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+125,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+126,Baylor,N/A,"Danny gave to Jon, June 25",,,,
+127,Baylor,N/A,"Danny gave to Jon, June 25",,,,
+128,Preseries CM,N/A,"Given to Paul, June 20",,,,
+129,Preseries CM,N/A,"Given to Paul, June 20",,,,
+130,Preseries CM,N/A,"Given to Paul, June 20",,,,
+131,Preseries CM,N/A,"Given to Paul, June 20",,,,
+132,Failed Test,N/A,Moved to Failure Tray,,,,
+133,Preseries CM,N/A,"Given to Paul, June 20",,,,
+134,Preseries CM,N/A,"Given to Paul, June 20",,,,
+135,Preseries CM,N/A,"Given to Paul, June 20",,,,
+136,Preseries CM,N/A,"Given to Paul, June 20",,,,
+137,Preseries CM,N/A,"Given to Paul, June 20",,,,
+138,Preseries CM,N/A,"Given to Paul, June 20",,,,
+139,Preseries CM,N/A,"Given to Paul, June 20",,,,
+140,Preseries CM,N/A,"Given to Paul, June 20",,,,
+141,Preseries CM,N/A,"Given to Paul, June 20",,,,
+142,Preseries CM,N/A,"Given to Paul, June 20",,,,
+143,Preseries CM,N/A,"Given to Paul, June 20",,,,
+144,Preseries CM,N/A,"Given to Paul, June 20",,,,
+145,Preseries CM,N/A,"Given to Paul, June 20",,,,
+146,Preseries CM,N/A,"Given to Paul, June 20",,,,
+147,Preseries CM,N/A,"Given to Paul, June 20",,,,
+148,Preseries CM,N/A,"Given to Paul, June 20",,,,
+149,Preseries CM,N/A,"Given to Paul, June 20",,,,
+150,Preseries CM,N/A,"Given to Paul, June 20",,,,
+151,Preseries CM,N/A,"Given to Paul, June 20",,,,
+152,Preseries CM,N/A,"Given to Paul, June 20",,,,
+153,Failed Test,N/A,Moved to Failure Tray,,,,
+154,Preseries CM,N/A,"Given to Paul, June 20",,,,
+155,Preseries CM,N/A,"Given to Paul, June 20",,,,
+156,Preseries CM,N/A,"Given to Paul, June 20",,,,
+157,Preseries CM,N/A,"Given to Paul, June 20",,,,
+158,Preseries CM,N/A,"Given to Paul, June 20",,,,
+159,Preseries CM,N/A,"Given to Paul, June 20",,,,
+160,Preseries CM,N/A,"Given to Paul, June 20",,,,
+161,Preseries CM,N/A,"Given to Paul, June 20",,,,
+162,Failed Test,N/A,"Broken Pins while labelling, moved to failure tray",,,,
+163,Preseries CM,N/A,"Given to Paul, June 20",,,,
+164,Preseries CM,N/A,"Given to Paul, June 20",,,,
+165,Preseries CM,N/A,"Given to Paul, June 20",,,,
+166,Preseries CM,N/A,"Given to Paul, June 20",,,,
+167,Preseries CM,N/A,"Given to Paul, June 20",,,,
+168,Preseries CM,N/A,"Given to Paul, June 20",,,,
+169,Preseries CM,N/A,"Given to Paul, June 20",,,,
+170,Preseries CM,N/A,"Given to Paul, June 20",,,,
+171,Preseries CM,N/A,"Given to Paul, June 20",,,,
+172,Preseries CM,N/A,"Given to Paul, June 20",,,,
+173,Preseries CM,N/A,"Given to Paul, June 20",,,,
+174,Preseries CM,N/A,"Given to Paul, June 20",,,,
+175,Preseries CM,N/A,"Given to Paul, June 20",,,,
+176,Preseries CM,N/A,"Given to Paul, June 20",,,,
+177,Preseries CM,N/A,"Given to Paul, June 20",,,,
+178,Preseries CM,N/A,"Given to Paul, June 20",,,,
+179,Preseries CM,N/A,"Given to Paul, June 20",,,,
+180,Preseries CM,N/A,"Given to Paul, June 20",,,,
+181,Preseries CM,N/A,"Given to Paul, June 20",,,,
+182,Preseries CM,N/A,"Given to Paul, June 20",,,,
+183,Preseries CM,N/A,"Given to Paul, June 20",,,,
+184,Preseries CM,N/A,"Given to Paul, June 20",,,,
+185,Preseries CM,N/A,"Given to Paul, June 20",,,,
+186,Preseries CM,N/A,"Given to Paul, June 20",,,,
+187,Preseries CM,N/A,"Given to Paul, June 20",,,,
+188,Preseries CM,N/A,"Given to Paul, June 20",,,,
+189,Preseries CM,N/A,"Given to Paul, June 20",,,,
+190,Preseries CM,N/A,"Given to Paul, June 20",,,,
+201,Pass,N/A,,,,,
+202,Pass,N/A,,,,,
+203,Pass,N/A,,,,,
+204,Pass,N/A,,,,,
+205,Pass,N/A,,,,,
+206,Pass,N/A,,,,,
+207,Pass,N/A,,,,,
+208,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+209,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+210,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+211,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+212,Failed Test,N/A,,,,,
+213,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+214,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+215,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+216,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+217,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+218,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+219,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+220,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+221,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+222,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+223,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+224,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+225,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+226,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+227,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+228,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+229,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+230,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+231,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+232,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+233,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+234,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+235,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+236,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+237,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+238,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+239,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+240,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+241,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+242,Failed Test,N/A,,,,,
+243,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+244,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+245,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+246,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+247,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+248,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+249,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+250,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+251,Failed Test,N/A,,,,,
+252,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+253,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+254,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+255,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+256,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+257,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+258,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+259,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+260,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+261,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+262,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+263,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+264,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+265,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+266,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+267,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+268,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+269,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+270,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+271,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+272,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+273,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+274,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+275,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+276,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+277,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+278,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+279,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+280,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+281,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+282,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+283,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+284,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+285,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+286,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+287,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+288,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+289,Preseries CM batch 2,N/A,"Given to Paul, June 27",,,,
+290,Failed Test,N/A,Bad JSON file,,,,
+301,FSU,N/A,,,,,
+302,FSU,N/A,,,,,
+303,FSU,N/A,,,,,
+304,FSU,N/A,,,,,
+305,FSU,N/A,,,,,
+306,FSU,N/A,,,,,
+307,FSU,N/A,,,,,
+308,FSU,N/A,,,,,
+309,FSU,N/A,,,,,
+310,FSU,N/A,,,,,
+311,FSU,N/A,,,,,
+312,FSU,N/A,,,,,
+313,FSU,N/A,,,,,
+314,FSU,N/A,,,,,
+315,FSU,N/A,,,,,
+316,FSU,N/A,,,,,
+317,FSU,N/A,,,,,
+318,FSU,N/A,,,,,
+319,FSU,N/A,,,,,
+320,FSU,N/A,,,,,
+321,FSU,N/A,,,,,
+322,FSU,N/A,,,,,
+323,FSU,N/A,,,,,
+324,FSU,N/A,,,,,
+325,FSU,N/A,,,,,
+326,FSU,N/A,,,,,
+327,Failed Test,N/A,,,,,
+328,FSU,N/A,,,,,
+329,FSU,N/A,,,,,
+330,FSU,N/A,,,,,
+331,FSU,N/A,,,,,
+332,FSU,N/A,,,,,
+333,FSU,N/A,,,,,
+334,FSU,N/A,,,,,
+335,FSU,N/A,,,,,
+336,FSU,N/A,,,,,
+337,FSU,N/A,,,,,
+338,FSU,N/A,,,,,
+339,FSU,N/A,,,,,
+340,FSU,N/A,,,,,
+341,FSU,N/A,,,,,
+342,"QC test done, not coverage",,"Shipped to Minnesota, Aug 8",,,,
+343,"QC test done, not coverage",,"Shipped to Minnesota, Aug 8",,,,
+344,"QC test done, not coverage",,"Shipped to Minnesota, Aug 8",,,,
+345,"QC test done, not coverage",,"Shipped to Minnesota, Aug 8",,,,
+346,"QC test done, not coverage",,"Shipped to Minnesota, Aug 8",,,,
+347,"QC test done, not coverage",,"Shipped to Minnesota, Aug 8",,,,
+348,"QC test done, not coverage",,"Shipped to Minnesota, Aug 8",,,,
+349,"QC test done, not coverage",,"Shipped to Minnesota, Aug 8",,,,
+350,"QC test done, not coverage",,"Shipped to Minnesota, Aug 8",,,,
+351,"QC test done, not coverage",,"Shipped to Minnesota, Aug 8",,,,
+352,"QC test done, not coverage",,"Shipped to Minnesota, Aug 8",,,,
+353,"QC test done, not coverage",ALL PASS,"Shipped to Minnesota, Aug 8",,,,
+354,"QC test done, not coverage",,"Shipped to Minnesota, Aug 8",,,,
+355,"QC test done, not coverage",,"Shipped to Minnesota, Aug 8",,,,
+356,"QC test done, not coverage",,"Shipped to Minnesota, Aug 8",,,,
+357,"QC test done, not coverage",,"Shipped to Minnesota, Aug 8",,,,
+358,"QC test done, not coverage",,"Shipped to Minnesota, Aug 8",,,,
+359,"QC test done, not coverage",,"Shipped to Minnesota, Aug 8",,,,
+360,"QC test done, not coverage",,"Shipped to Minnesota, Aug 8",,,,
+361,"QC test done, not coverage",,"Shipped to Minnesota, Aug 8",,,,
+362,"QC test done, not coverage",,"Shipped to Minnesota, Aug 8",,,,
+363,"QC test done, not coverage",,"Shipped to Minnesota, Aug 8",,,,
+364,"QC test done, not coverage",,"Shipped to Minnesota, Aug 8",,,,
+365,"QC test done, not coverage",,"Shipped to Minnesota, Aug 8",,,,
+366,"QC test done, not coverage",,"Shipped to Minnesota, Aug 8",,,,
+367,"QC test done, not coverage",,"Shipped to Minnesota, Aug 8",,,,
+368,"QC test done, not coverage",,"Shipped to Minnesota, Aug 8",,,,
+369,"QC test done, not coverage",,"Shipped to Minnesota, Aug 8",,,,
+370,"QC test done, not coverage",,"Shipped to Minnesota, Aug 8",,,,
+371,"QC test done, not coverage",,"Shipped to Minnesota, Aug 8",,,,
+372,"QC test done, not coverage",ALL PASS,"Shipped to Minnesota, Aug 8",,,,
+373,"QC test done, not coverage",,"Shipped to Minnesota, Aug 8",,,,
+374,"QC test done, not coverage",,"Shipped to Minnesota, Aug 8",,,,
+375,"QC test done, not coverage",,"Shipped to Minnesota, Aug 8",,,,
+376,"QC test done, not coverage",,"Shipped to Minnesota, Aug 8",,,,
+377,"QC test done, not coverage",,"Shipped to Minnesota, Aug 8",,,,
+378,"QC test done, not coverage",,"Shipped to Minnesota, Aug 8",,,,
+379,"QC test done, not coverage",,"Shipped to Minnesota, Aug 8",,,,
+380,"QC test done, not coverage",,"Shipped to Minnesota, Aug 8",,,,
+381,"QC test done, not coverage",,"Shipped to Minnesota, Aug 8",,,,
+382,"QC test done, not coverage",,"Shipped to Minnesota, Aug 8",,,,
+383,"QC test done, not coverage",,"Shipped to Minnesota, Aug 8",,,,
+384,"QC test done, not coverage",,"Shipped to Minnesota, Aug 8",,,,
+385,"QC test done, not coverage",,"Shipped to Minnesota, Aug 8",,,,
+386,"QC test done, not coverage",,"Shipped to Minnesota, Aug 8",,,,
+387,"QC test done, not coverage",,"Shipped to Minnesota, Aug 8",,,,
+388,"QC test done, not coverage","Failed test_ePortRXPRBS[1.08], width==0, outlier",In WH14 (Aug 5),,,,
+389,"QC test done, not coverage",,"Shipped to Minnesota, Aug 8",,,,
+390,"QC test done, not coverage",,"Shipped to Minnesota, Aug 8",,,,
+401,"QC test done, not coverage","test_pll_capbank_width[1.08], 12>=14
+test_eTX_delayscan[1.08],8>=9","Packed, In WH14 (Aug 6)",,,,
+402,"QC test done, not coverage",ALL PASS,"Packed, In WH14 (Aug 6)",,,,
+403,"QC test done, not coverage","test_pll_capbank_width[1.08], 13>=14
+test_pll_capbank_width[1.2], 13>=14
+test_eTX_delayscan[1.08],7>=9
+test_eTX_delayscan[1.2],10>=11","Packed, In WH14 (Aug 6)",,,,
+404,"QC test done, not coverage","test_pll_capbank_width[1.08], 13>=14
+test_pll_capbank_width[1.2], 13>=14
+test_eTX_delayscan[1.08],8>=9","Packed, In WH14 (Aug 6)",,,,
+405,"QC test done, not coverage","test_pll_capbank_width[1.08], 13>=14","Packed, In WH14 (Aug 6)",,,,
+406,"QC test done, not coverage","test_pll_capbank_width[1.08], 13>=14
+test_eTX_delayscan[1.08],8>=9","Packed, In WH14 (Aug 6)",,,,
+407,"QC test done, not coverage","test_pll_capbank_width[1.08], 13>=14","Packed, In WH14 (Aug 6)",,,,
+408,"QC test done, not coverage",ALL PASS,"Packed, In WH14 (Aug 6)",,,,
+409,"QC test done, not coverage","test_pll_capbank_width[1.08], 13>=14
+test_eTX_delayscan[1.08],8>=9","Packed, In WH14 (Aug 6)",,,,
+410,"QC test done, not coverage","test_pll_capbank_width[1.08], 13>=14
+test_pll_capbank_width[1.2], 13>=14
+test_pll_capbank_width[1.32], 13>=14
+test_eTX_delayscan[1.08],8>=9","Packed, In WH14 (Aug 6)",,,,
+411,"QC test done, not coverage","test_pll_capbank_width[1.08], 13>=14","Packed, In WH14 (Aug 6)",,,,
+412,"QC test done, not coverage","test_pll_capbank_width[1.08], 12>=14","Packed, In WH14 (Aug 6)",,,,
+413,"QC test done, not coverage",ALL PASS,"Packed, In WH14 (Aug 6)",,,,
+414,"QC test done, not coverage","test_pll_capbank_width[1.08], 13>=14
+test_eTX_delayscan[1.2],10>=11","Packed, In WH14 (Aug 6)",,,,
+415,"QC test done, not coverage","test_pll_capbank_width[1.08], 13>=14","Packed, In WH14 (Aug 6)",,,,
+416,"QC test done, not coverage","test_pll_capbank_width[1.08], 13>=14
+test_eTX_delayscan[1.08],8>=9","Packed, In WH14 (Aug 6)",,,,
+417,"QC test done, not coverage","test_pll_capbank_width[1.08], 13>=14","Packed, In WH14 (Aug 6)",,,,
+418,"QC test done, not coverage","test_pll_capbank_width[1.08], 13>=14
+test_pll_capbank_width[1.2], 13>=14
+test_pll_capbank_width[1.32], 13>=14
+test_eTX_delayscan[1.2],10>=11","Packed, In WH14 (Aug 6)",,,,
+419,"QC test done, not coverage","test_pll_capbank_width[1.08], 13>=14
+test_pll_capbank_width[1.2], 13>=14
+test_eTX_delayscan[1.08],8>=9
+test_eTX_delayscan[1.2],10>=11","Packed, In WH14 (Aug 6)",,,,
+420,"QC test done, not coverage","test_pll_capbank_width[1.08], 13>=14
+test_eTX_delayscan[1.08],8>=9","Packed, In WH14 (Aug 6)",,,,
+421,"QC test done, not coverage","test_pll_capbank_width[1.08], 12>=14
+test_pll_capbank_width[1.2], 12>=14","Packed, In WH14 (Aug 6)",,,,
+422,"QC test done, not coverage","test_pll_capbank_width[1.08], 13>=14
+test_pll_capbank_width[1.2], 13>=14","Packed, In WH14 (Aug 6)",,,,
+423,"QC test done, not coverage","test_pll_capbank_width[1.08], 13>=14
+test_pll_capbank_width[1.2], 13>=14
+test_pll_capbank_width[1.32], 13>=14
+test_eTX_delayscan[1.2],10>=11","Packed, In WH14 (Aug 6)",,,,
+424,"QC test done, not coverage","test_pll_capbank_width[1.08], 13>=14","Packed, In WH14 (Aug 6)",,,,
+425,"QC test done, not coverage","test_pll_capbank_width[1.08], 13>=14
+test_pll_capbank_width[1.2], 13>=14
+test_eTX_delayscan[1.08],8>=9
+test_eTX_delayscan[1.2],10>=11","Packed, In WH14 (Aug 6)",,,,
+426,"QC test done, not coverage","test_pll_capbank_width[1.08], 13>=14
+test_pll_capbank_width[1.2], 13>=14
+test_eTX_delayscan[1.08],8>=9
+test_eTX_delayscan[1.2],10>=11","Packed, In WH14 (Aug 6)",,,,
+427,"QC test done, not coverage","test_pll_capbank_width[1.08], 13>=14
+test_eTX_delayscan[1.08],8>=9","Packed, In WH14 (Aug 6)",,,,
+428,"QC test done, not coverage","test_pll_capbank_width[1.08], 13>=14
+test_pll_capbank_width[1.32], 13>=14","Packed, In WH14 (Aug 6)",,,,
+429,"QC test done, not coverage","test_pll_capbank_width[1.08], 13>=14
+test_eTX_delayscan[1.08],8>=9","Packed, In WH14 (Aug 6)",,,,
+430,"QC test done, not coverage","test_pll_capbank_width[1.08], 13>=14
+test_pll_capbank_width[1.2], 13>=14","Packed, In WH14 (Aug 6)",,,,
+431,"QC test done, not coverage","test_pll_capbank_width[1.08], 12>=14
+test_pll_capbank_width[1.2], 13>=14
+test_eTX_delayscan[1.2],10>=11","Packed, In WH14 (Aug 6)",,,,
+432,"QC test done, not coverage","test_pll_capbank_width[1.08], 13>=14
+test_pll_capbank_width[1.2], 13>=14","Packed, In WH14 (Aug 6)",,,,
+433,"QC test done, not coverage","test_pll_capbank_width[1.08], 12>=14
+test_eTX_delayscan[1.08],8>=9","Packed, In WH14 (Aug 6)",,,,
+434,"QC test done, not coverage","test_pll_capbank_width[1.08], 13>=14
+test_pll_capbank_width[1.2], 13>=14
+test_eTX_delayscan[1.08],8>=9","Packed, In WH14 (Aug 6)",,,,
+435,"QC test done, not coverage","test_pll_capbank_width[1.08], 12>=14
+test_pll_capbank_width[1.2], 13>=14
+test_pll_capbank_width[1.32], 13>=14
+test_eTX_delayscan[1.08],8>=9","Packed, In WH14 (Aug 6)",,,,
+436,"QC test done, not coverage",ALL PASS,"Packed, In WH14 (Aug 6)",,,,
+437,"QC test done, not coverage",ALL PASS,"Packed, In WH14 (Aug 6)",,,,
+438,"QC test done, not coverage","test_pll_capbank_width[1.08], 13>=14","Packed, In WH14 (Aug 6)",,,,
+439,"QC test done, not coverage","test_pll_capbank_width[1.08], 13>=14
+test_eTX_delayscan[1.08],8>=9","Packed, In WH14 (Aug 6)",,,,
+440,"QC test done, not coverage","test_pll_capbank_width[1.08], 13>=14
+test_pll_capbank_width[1.2], 13>=14
+test_eTX_delayscan[1.08],8>=9","Packed, In WH14 (Aug 6)",,,,
+441,"QC test done, not coverage","test_pll_capbank_width[1.08], 13>=14
+test_eTX_delayscan[1.2], 10>=11","Packed, In WH14 (Aug 6)",,,,
+442,"QC test done, not coverage","test_eTX_delayscan[1.08], 8>=9
+test_eTX_delayscan[1.2], 10>=11","Packed, In WH14 (Aug 6)",,,,
+443,"QC test done, not coverage",ALL PASS,"Packed, In WH14 (Aug 6)",,,,
+444,"QC test done, not coverage","test_pll_capbank_width[1.08], 12>=14","Packed, In WH14 (Aug 6)",,,,
+445,"QC test done, not coverage","test_pll_capbank_width[1.08], 12>=14","Packed, In WH14 (Aug 6)",,,,
+446,"QC test done, not coverage","test_pll_capbank_width[1.08], 12>=14
+test_pll_capbank_width[1.2], 13>=14
+test_pll_capbank_width[1.32], 13>=14","Packed, In WH14 (Aug 6)",,,,
+447,"QC test done, not coverage","test_pll_capbank_width[1.08], 13>=14
+test_pll_capbank_width[1.2], 13>=14
+test_pll_capbank_width[1.32], 13>=14
+test_eTX_delayscan[1.08], 8>=9
+test_eTX_delayscan[1.2], 10>=11","Packed, In WH14 (Aug 6)",,,,
+448,"QC test done, not coverage","test_pll_capbank_width[1.08], 13>=14
+test_pll_capbank_width[1.2], 13>=14
+test_pll_capbank_width[1.32], 13>=14
+test_eTX_delayscan[1.08], 8>=9
+test_eTX_delayscan[1.2], 10>=11",In WH14 (Aug 6),,,,
+449,"QC test done, not coverage","test_pll_capbank_width[1.08], 13>=14",In WH14 (Aug 6),,,,
+450,"QC test done, not coverage",ALL PASS,"Packed, In WH14 (Aug 6)",,,,
+451,"QC test done, not coverage","test_pll_capbank_width[1.08], 13>=14
+test_eTX_delayscan[1.08], 7>=9",In WH14 (Aug 6),,,,
+452,"QC test done, not coverage","test_pll_capbank_width[1.08], 13>=14
+test_pll_capbank_width[1.2], 13>=14
+test_eTX_delayscan[1.08], 8>=9",In WH14 (Aug 6),,,,
+453,"QC test done, not coverage","test_pll_capbank_width[1.08], 13>=14",In WH14 (Aug 6),,,,
+454,"QC test done, not coverage","test_pll_capbank_width[1.08], 12>=14",In WH14 (Aug 6),,,,
+455,"QC test done, not coverage","test_pll_capbank_width[1.08], 13>=14
+test_pll_capbank_width[1.2], 13>=14
+test_pll_capbank_width[1.32], 13>=14",In WH14 (Aug 6),,,,
+456,"QC test done, not coverage",ALL PASS,"Packed, In WH14 (Aug 6)",,,,
+457,"QC test done, not coverage",ALL PASS,"Packed, In WH14 (Aug 6)",,,,
+458,"QC test done, not coverage","test_pll_capbank_width[1.08], 13>=14
+test_pll_capbank_width[1.2], 13>=14",In WH14 (Aug 6),,,,
+459,"QC test done, not coverage","test_pll_capbank_width[1.08], 12>=14
+test_eTX_delayscan[1.08], 8>=9
+test_eTX_delayscan[1.2], 10>=11",In WH14 (Aug 6),,,,
+460,"QC test done, not coverage","test_pll_capbank_width[1.08], 12>=14",In WH14 (Aug 6),,,,
+461,"QC test done, not coverage","test_pll_capbank_width[1.08], 13>=14
+test_pll_capbank_width[1.2], 13>=14
+test_eTX_delayscan[1.08], 8>=9
+test_eTX_delayscan[1.2], 10>=11",In WH14 (Aug 6),,,,
+462,"QC test done, not coverage",ALL PASS,"Packed, In WH14 (Aug 6)",,,,
+463,"QC test done, not coverage","test_pll_capbank_width[1.08], 12>=14",In WH14 (Aug 6),,,,
+464,"QC test done, not coverage","test_pll_capbank_width[1.08], 13>=14
+test_eTX_delayscan[1.08], 8>=9",In WH14 (Aug 6),,,,
+465,"QC test done, not coverage","test_pll_capbank_width[1.08], 13>=14
+test_pll_capbank_width[1.2], 13>=14
+test_eTX_delayscan[1.08], 8>=9",In WH14 (Aug 6),,,,
+466,"QC test done, not coverage","test_pll_capbank_width[1.08], 13>=14
+test_pll_capbank_width[1.2], 13>=14
+test_eTX_delayscan[1.08], 8>=9
+test_eTX_delayscan[1.2], 10>=11",In WH14 (Aug 6),,,,
+467,"QC test done, not coverage","test_pll_capbank_width[1.08], 12>=14",In WH14 (Aug 6),,,,
+468,"QC test done, not coverage","test_pll_capbank_width[1.08], 13>=14",In WH14 (Aug 6),,,,
+469,"QC test done, not coverage","test_pll_capbank_width[1.08], 13>=14
+test_pll_capbank_width[1.2], 13>=14
+test_pll_capbank_width[1.32], 13>=14
+test_eTX_delayscan[1.2], 10>=11",In WH14 (Aug 6),,,,
+470,"QC test done, not coverage","test_pll_capbank_width[1.08], 13>=14
+test_pll_capbank_width[1.2], 13>=14",In WH14 (Aug 6),,,,
+471,"QC test done, not coverage","test_pll_capbank_width[1.08], 13>=14
+test_pll_capbank_width[1.2], 13>=14",In WH14 (Aug 6),,,,
+472,"QC test done, not coverage","test_pll_capbank_width[1.08], 13>=14
+test_pll_capbank_width[1.2], 13>=14
+test_eTX_delayscan[1.08], 7>=9
+test_eTX_delayscan[1.2], 10>=11",In WH14 (Aug 6),,,,
+473,"QC test done, not coverage","test_pll_capbank_width[1.08], 12>=14
+test_eTX_delayscan[1.08], 8>=9",In WH14 (Aug 6),,,,
+474,"QC test done, not coverage","test_pll_capbank_width[1.08], 12>=14
+test_pll_capbank_width[1.2], 13>=14
+test_pll_capbank_width[1.32], 13>=14",In WH14 (Aug 6),,,,
+475,"QC test done, not coverage",ALL PASS,"Packed, In WH14 (Aug 6)",,,,
+476,"QC test done, not coverage","test_pll_capbank_width[1.08], 13>=14
+test_pll_capbank_width[1.2], 13>=14
+test_eTX_delayscan[1.08], 8>=9",In WH14 (Aug 6),,,,
+477,"QC test done, not coverage","test_pll_capbank_width[1.2], 13>=14",In WH14 (Aug 6),,,,
+478,"QC test done, not coverage","test_pll_capbank_width[1.08], 13>=14
+test_pll_capbank_width[1.2], 13>=14
+test_eTX_delayscan[1.08], 8>=9",In WH14 (Aug 6),,,,
+479,"QC test done, not coverage","test_pll_capbank_width[1.08], 13>=14
+test_pll_capbank_width[1.2], 13>=14
+test_eTX_delayscan[1.08], 8>=9
+test_eTX_delayscan[1.2], 10>=11",In WH14 (Aug 6),,,,
+480,"QC test done, not coverage","test_pll_capbank_width[1.08], 12>=14
+test_pll_capbank_width[1.2], 13>=14
+test_pll_capbank_width[1.32], 13>=14",In WH14 (Aug 6),,,,
+481,"QC test done, not coverage","test_pll_capbank_width[1.08], 13>=14",In WH14 (Aug 6),,,,
+482,"QC test done, not coverage","test_pll_capbank_width[1.08], 12>=14
+test_pll_capbank_width[1.2], 12>=14",In WH14 (Aug 6),,,,
+483,"QC test done, not coverage","test_pll_capbank_width[1.08], 13>=14
+test_pll_capbank_width[1.2], 13>=14",In WH14 (Aug 6),,,,
+484,"QC test done, not coverage","test_pll_capbank_width[1.08], 13>=14
+test_pll_capbank_width[1.2], 13>=14
+test_eTX_delayscan[1.08], 8>=9",In WH14 (Aug 6),,,,
+485,"QC test done, not coverage","test_pll_capbank_width[1.08], 12>=14
+test_pll_capbank_width[1.2], 13>=14
+test_eTX_delayscan[1.08], 7>=9
+test_eTX_delayscan[1.2], 10>=11",In WH14 (Aug 6),,,,
+486,"QC test done, not coverage","test_pll_capbank_width[1.08], 13>=14
+test_pll_capbank_width[1.2], 13>=14
+test_pll_capbank_width[1.32], 13>=14
+test_eTX_delayscan[1.2], 10>=11",In WH14 (Aug 6),,,,
+487,"QC test done, not coverage","Failed test_ePortRXPRBS[1.08], width==0, outlier",In WH14 (Aug 6),,,,
+488,"QC test done, not coverage","test_pll_capbank_width[1.08], 13>=14
+test_pll_capbank_width[1.2], 13>=14",In WH14 (Aug 6),,,,
+489,"QC test done, not coverage","test_pll_capbank_width[1.08], 13>=14
+test_pll_capbank_width[1.2], 13>=14",In WH14 (Aug 6),,,,
+490,"QC test done, not coverage","test_pll_capbank_width[1.08], 13>=14",In WH14 (Aug 6),,,,
