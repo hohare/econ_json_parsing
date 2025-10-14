@@ -17,7 +17,7 @@ try:
     df_D.Timestamp = pd.to_datetime(df_D.Timestamp)
     df_D['Pass'] = df_D['Pass/Fail']=='Pass'
     df_D['Fail'] = df_D['Pass/Fail']=='Fail'
-    by_week_D=df_D.groupby(pd.Grouper(key='Timestamp', freq='3h'))
+    by_week_D=df_D.groupby(pd.Grouper(key='Timestamp', freq='W'))
 
     summary_D = by_week_D.count()[['Pass/Fail']]
     summary_D.columns = ['Total']
@@ -31,7 +31,7 @@ try:
     df_T.Timestamp = pd.to_datetime(df_T.Timestamp)
     df_T['Pass'] = df_T['Pass/Fail']=='Pass'
     df_T['Fail'] = df_T['Pass/Fail']=='Fail'
-    by_week_T=df_T.groupby(pd.Grouper(key='Timestamp', freq='3h'))
+    by_week_T=df_T.groupby(pd.Grouper(key='Timestamp', freq='W'))
 
     summary_T = by_week_T.count()[['Pass/Fail']]
     summary_T.columns = ['Total']
