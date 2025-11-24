@@ -192,7 +192,7 @@ def mark_TID_times(ax,_COB_,leg_loc=None, vsTID=False):
     if leg_loc==False:
         return
     if leg_loc is None:
-        ax.legend()
+        return ax.legend()
     elif 'right' in leg_loc:
         offset = .05
         if '+' in leg_loc:
@@ -204,7 +204,7 @@ def mark_TID_times(ax,_COB_,leg_loc=None, vsTID=False):
                     offset = int(_extra)/100.
                 except:
                     offset = .10
-        ax.legend(loc='upper left', bbox_to_anchor=(1+offset, 1.0))
+        return ax.legend(loc='upper left', bbox_to_anchor=(1+offset, 1.0))
 
 # def mark_TID_times_COB_5Pct_1_1(ax,leg_loc=None):
 #     _xlim = ax.get_xlim()
