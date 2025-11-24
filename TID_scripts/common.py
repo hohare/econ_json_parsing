@@ -15,7 +15,7 @@ import matplotlib.pyplot as plt
 
 import os
 
-MYROOT = os.environ['MYROOT']
+#MYROOT = os.environ['MYROOT']
 
 mplhep.style.use(mplhep.style.CMS)
 
@@ -40,7 +40,6 @@ def get_data(path_to_json):
     startTime = get_timestamp0(fnames)
     data = [jsonload(fname) for fname in fnames]
     return data, startTime
-
 
 
 def Timestamp2MRad(input, startTime):
@@ -79,5 +78,8 @@ def create_plot_path(path):
     return path
 
 
+def get_timestamp(timestamp):
+    return np.datetime64(timestamp[:timestamp.find(":")+3])
 
-
+def get_COB(filename):
+    return filename[filename.find("COB"):].replace('.csv','')
